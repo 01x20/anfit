@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+:root {
+    --primary-color: #73B3E6;
+    --secondary-color: #D97B92;
+    --primary-gray: #ECECEC;
+    --text-gray: #9399A1;
+    --gray-300: #B3B8C1;
+    --text-color: #2B282F;
+    --border-color: #EDF0F4;
+}
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../fonts/Pretendard-Regular.woff") format("woff"),
+    url("../fonts/Pretendard-Regular.woff") format("woff2");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Pretendard";
+    src: url("../fonts/Pretendard-Bold.woff") format("woff"),
+    url("../fonts/Pretendard-Bold.woff2") format("woff2");
+    font-weight: 700;
+  }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr,
+acronym, address, big, cite, code,del, dfn, em, img, ins, kbd,
+q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl,
+dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody,
+tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section,
+summary,time, mark, audio, video, input, button, select, textarea {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+    display: block;
+}
+input {
+    -webkit-appearance: none;
+}
+input::-webkit-input-placeholder {
+    color: var(--text-gray);
+}
+input:-ms-input-placeholder {
+    color: var(--text-gray);
+}
+button,input {
+    border-radius: 0;
+}
+button {
+    cursor: pointer;
+}
+button, input, select {
+    vertical-align: middle;
+}
+select::-ms-expand{
+    display:none;
+}
+fieldset, img {
+    border: 0;
+}
+ol,ul {
+    list-style: none
+}
+li {
+    display: block;
+}
+address,em {
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+iframe {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0; 
+    table-layout: fixed;
+}
+html {
+    font-size: 10px;
+    color: var(--text-color);
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: 'Pretendard', sans-serif;
+}
+textarea {
+    resize: none;
+    border: 1px solid var(--border-color);
+}
+body,input,select,textarea,button {
+    border: none;
+    background: none;
+    font-size: 1.3rem;
+    letter-spacing: -0.05rem;
+}
+table {
+    border: none; 
+    background: none;
+    color: var(--text-color);
+}
