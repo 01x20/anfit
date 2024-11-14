@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/* header */
+.header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.logo {
+    width: 20px;
+    height: 20px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+/* footer */
+.footer {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    height: 60px;
+    text-align: center; 
+    bottom: 0;
+    left: 0;
+    padding: 0 16px 8px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.footer-list > li {
+    width: 20%;
+}
+.footer-list .btn {
+    color: var(--gray-300);
+    position:relative;
+    padding-top: 25px;
+    width: 100%;
+}
+
+.footer-list .btn::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/icon-footer.png');
+    background-size: auto 40px;
+    background-position: 0 0;
+}
+
+/* footer active 처리 */
+.footer-list > li.active .btn {
+    color: var(--primary-color);
+}
+.footer-list > li.active .btn::before {
+    background-position: 0 20px;
+}

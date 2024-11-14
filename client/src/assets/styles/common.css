@@ -34,6 +34,7 @@ summary,time, mark, audio, video, input, button, select, textarea {
     margin: 0;
     padding: 0;
     vertical-align: top;
+    box-sizing: border-box;
 }
 
 article, aside, details, figcaption, figure,
