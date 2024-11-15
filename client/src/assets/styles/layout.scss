@@ -39,11 +39,13 @@
         align-items: center;
         justify-content: center;
         width: 100%;
+        font-size: 1rem;
 
         li {
             width: 20%;
 
             .btn {
+                display: block;
                 color: var(--gray-300);
                 position:relative;
                 padding-top: 2.5rem;
@@ -62,23 +64,20 @@
                     background-position-x: 0;
                     background-position-y: 0;
                 }
+
+                &.active {
+                    color: var(--primary-color);
+
+                    &::before {
+                        background-position-y: 2rem;
+                    }
+                }
             }
 
             //아이콘 포지션
             @for $i from 0 to 5 {
                 &.btn-box#{$i} .btn::before {
                     background-position-x: $i * -2rem;
-                }
-            }
-
-            //active 처리
-            &.active {
-                .btn {
-                    color: var(--primary-color);
-
-                    &::before {
-                        background-position-y: 2rem;
-                    }
                 }
             }
         }
