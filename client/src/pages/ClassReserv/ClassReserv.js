@@ -1,1 +1,12 @@
-/* 수업 예약 */
+import React from "react";
+import './classReserv.css';
+
+function ClassReserv() {
+  return (
+      <div className="notice-banner">
+        수업 예약!!!!!!!!!~~~
+      </div>
+  );
+}
+
+export default ClassReserv;

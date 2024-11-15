@@ -1,72 +1,85 @@
-@charset "utf-8";
-
 /* header */
 .header {
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.6rem;
 }
-
-.logo {
-    width: 20px;
-    height: 20px;
+.header .logo {
+  width: 2rem;
+  height: 2rem;
 }
-
-.logo img {
-    width: 100%;
+.header .logo img {
+  width: 100%;
 }
 
 /* footer */
 .footer {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    height: 60px;
-    text-align: center; 
-    bottom: 0;
-    left: 0;
-    padding: 0 16px 8px;
-    border-top: 1px solid var(--border-color);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: 6rem;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  padding: 0 1.6rem 0.8rem;
+  border-top: 1px solid var(--border-color);
+}
+.footer .footer-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.footer .footer-list li {
+  width: 20%;
+}
+.footer .footer-list li .btn {
+  color: var(--gray-300);
+  position: relative;
+  padding-top: 2.5rem;
+  width: 100%;
+}
+.footer .footer-list li .btn::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  background-image: url("../images/icon-footer.png");
+  background-size: auto 4rem;
+  background-position-x: 0;
+  background-position-y: 0;
+}
+.footer .footer-list li.btn-box0 .btn::before {
+  background-position-x: 0rem;
+}
+.footer .footer-list li.btn-box1 .btn::before {
+  background-position-x: -2rem;
+}
+.footer .footer-list li.btn-box2 .btn::before {
+  background-position-x: -4rem;
+}
+.footer .footer-list li.btn-box3 .btn::before {
+  background-position-x: -6rem;
+}
+.footer .footer-list li.btn-box4 .btn::before {
+  background-position-x: -8rem;
+}
+.footer .footer-list li.active .btn {
+  color: var(--primary-color);
+}
+.footer .footer-list li.active .btn::before {
+  background-position-y: 2rem;
 }
 
-.footer-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-.footer-list > li {
-    width: 20%;
-}
-.footer-list .btn {
-    color: var(--gray-300);
-    position:relative;
-    padding-top: 25px;
-    width: 100%;
-}
-
-.footer-list .btn::before {
-    position: absolute;
-    content: '';
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background-image: url('../images/icon-footer.png');
-    background-size: auto 40px;
-    background-position: 0 0;
-}
-
-/* footer active 처리 */
-.footer-list > li.active .btn {
-    color: var(--primary-color);
-}
-.footer-list > li.active .btn::before {
-    background-position: 0 20px;
-}
+.contents-wrap {
+  padding: 5rem 1.6rem 6rem;
+  height: calc(100vh - 11rem);
+}/*# sourceMappingURL=layout.css.map */

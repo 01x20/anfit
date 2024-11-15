@@ -1,15 +1,8 @@
-import './assets/styles/common.css';
-import './assets/styles/layout.css';
-
-import Header from "./components/Header.js";
-import Footer from "./components/Footer.js";
+import Router from "./routers/Router";
 
 function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <Footer />
-    </div>
+   <Router />
   );
 }
 

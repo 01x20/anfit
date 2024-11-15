@@ -1,11 +1,11 @@
 import React from "react";
-import './Home.css';
+import './home.css';
 
 function Home() {
   return (
-    <div className="main-contents">
-        <div className="notice-banner"></div>
-    </div>
+      <div className="notice-banner">
+        안녕하세요 테스트
+      </div>
   );
 }
 
