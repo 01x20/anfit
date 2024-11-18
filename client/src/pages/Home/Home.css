@@ -1,7 +1,7 @@
-.contents-wrap {
+.contents-wrap.main {
   position: relative;
 }
-.contents-wrap::before {
+.contents-wrap.main::before {
   position: absolute;
   content: "";
   width: 100%;
