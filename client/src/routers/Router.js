@@ -7,6 +7,7 @@ import ClassPass from "../pages/ClassPass/ClassPass";
 import ClassReserv from "../pages/ClassReserv/ClassReserv";
 import Community from "../pages/Community/Community";
 import Mypage from "../pages/Mypage/Mypage";
+import AnfitInfo from '../pages/Home/AnfitInfo';
 
 const Router = () => {
     return (
@@ -18,6 +19,7 @@ const Router = () => {
                     <Route path="reservation" element={<ClassReserv />} />
                     <Route path="community" element={<Community />} />
                     <Route path="mypage" element={<Mypage />} />
+                    <Route path="anfit-info" element={<AnfitInfo />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

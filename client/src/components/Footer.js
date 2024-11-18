@@ -1,15 +1,48 @@
 import React from "react";
-import NavItem from "./NavItem";
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
+
   return (
     <footer className="footer">
         <ul className="footer-list">
-            <NavItem to="/" text="홈" boxClass="btn-box0" />
-            <NavItem to="/class-pass" text="수강권" boxClass="btn-box1" />
-            <NavItem to="/reservation" text="수업예약" boxClass="btn-box2" />
-            <NavItem to="/community" text="커뮤니티" boxClass="btn-box3" />
-            <NavItem to="/mypage" text="마이페이지" boxClass="btn-box4" />
+            <li className="btn-box0">
+              <Link to ="/" className={
+              location.pathname === '/' ||
+              location.pathname === '/anfit-info'
+              ? 'active btn'
+              : 'btn'}>홈
+              </Link>
+            </li>
+            <li className="btn-box1">
+              <Link to ="/class-pass" className={
+              location.pathname === '/class-pass'
+              ? 'active btn'
+              : 'btn'}>수강권
+              </Link>
+            </li>
+            <li className="btn-box2">
+              <Link to ="/reservation" className={
+              location.pathname === '/reservation'
+              ? 'active btn'
+              : 'btn'}>수업예약
+              </Link>
+            </li>
+            <li className="btn-box3">
+              <Link to ="/community" className={
+              location.pathname === '/community'
+              ? 'active btn'
+              : 'btn'}>커뮤니티
+              </Link>
+            </li>
+            <li className="btn-box4">
+              <Link to ="/mypage" className={
+              location.pathname === '/mypage'
+              ? 'active btn'
+              : 'btn'}>마이페이지
+              </Link>
+            </li>
         </ul>
     </footer>
   );

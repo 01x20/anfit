@@ -33,7 +33,7 @@ function Home() {
 
       <div className="quick-icon-list">
         <Link to="/" className="btn-quick btn0">습관 만들기</Link>
-        <Link to="/" className="btn-quick btn1">안핏 안내</Link>
+        <Link to="/anfit-info" className="btn-quick btn1">안핏 안내</Link>
         <Link to="/" className="btn-quick btn2">수강권 정보</Link>
         <Link to="/" className="btn-quick btn3">예약하기</Link>
       </div>
