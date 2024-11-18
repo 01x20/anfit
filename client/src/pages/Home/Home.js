@@ -61,9 +61,9 @@ function Home() {
         slidesPerView={'auto'}
         className="info-slide">
         <SwiperSlide>
-        <div className="slide-inner">
+        <div className="common-info-box">
           <div className="info-top">
-            <p className="label-blue">사용 중</p>
+            <p className="label-box blue">사용 중</p>
             <p className="detail">1:1PT</p>
             <p className="detail">횟수제</p>
             <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
@@ -75,9 +75,9 @@ function Home() {
         </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="slide-inner">
+        <div className="common-info-box">
           <div className="info-top">
-            <p className="label-blue">사용 중</p>
+            <p className="label-box gray">사용 중지</p>
             <p className="detail">1:1PT</p>
             <p className="detail">횟수제</p>
             <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
@@ -90,7 +90,40 @@ function Home() {
         </SwiperSlide>
       </Swiper>
 
-      <div className="box-title">나의 수강권</div>
+      <div className="box-title">
+        예약한 수업
+        <Link to="/" className="read-more"></Link>
+      </div>
+      <ul className="reservation-list">
+        <li>
+          <div className="common-info-box">
+            <div className="info-top">
+              <p className="label-box blue">빙수 코치</p>
+              <p className="detail">1:1PT</p>
+              <p className="detail">횟수제</p>
+              <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
+            </div>
+            <div className="info-bottom">
+              <p className="date">2024. 11. 11 (월) 18:30 ~ 19:20</p>
+              <p className="num col-blue">예약 완료</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="common-info-box">
+            <div className="info-top">
+              <p className="label-box blue">빙수 코치</p>
+              <p className="detail">1:1PT</p>
+              <p className="detail">횟수제</p>
+              <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
+            </div>
+            <div className="info-bottom">
+              <p className="date">2024. 11. 13 (수) 18:30 ~ 19:20</p>
+              <p className="num col-blue">예약 완료</p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </>
   );
 }

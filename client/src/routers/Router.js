@@ -10,7 +10,7 @@ import Mypage from "../pages/Mypage/Mypage";
 
 const Router = () => {
     return (
-        <BrowserRouter basename="https://01x20.github.io/anfit/">
+        <BrowserRouter>
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
