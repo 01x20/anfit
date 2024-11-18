@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/anfit/static/css/main.7c8eae0c.css",
+    "main.js": "/anfit/static/js/main.f1dc9db7.js",
+    "static/media/Pretendard-Bold.woff": "/anfit/static/media/Pretendard-Bold.1d08b066c6ab6b61c312.woff",
+    "static/media/Pretendard-Regular.woff": "/anfit/static/media/Pretendard-Regular.757c5083534b6b80c0f5.woff",
+    "static/media/Pretendard-Bold.woff2": "/anfit/static/media/Pretendard-Bold.d30949674103a6de14b6.woff2",
+    "index.html": "/anfit/index.html",
+    "main.7c8eae0c.css.map": "/anfit/static/css/main.7c8eae0c.css.map",
+    "main.f1dc9db7.js.map": "/anfit/static/js/main.f1dc9db7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c8eae0c.css",
+    "static/js/main.f1dc9db7.js"
+  ]
+}
