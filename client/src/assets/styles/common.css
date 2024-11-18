@@ -8,6 +8,7 @@
     --gray-300: #B3B8C1;
     --text-color: #2B282F;
     --border-color: #EDF0F4;
+    --color-white: #fff;
 }
 
 @font-face {
@@ -40,9 +41,6 @@ summary,time, mark, audio, video, input, button, select, textarea {
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
-}
-input {
-    -webkit-appearance: none;
 }
 input::-webkit-input-placeholder {
     color: var(--text-gray);
@@ -110,4 +108,60 @@ table {
     border: none; 
     background: none;
     color: var(--text-color);
+}
+
+/* dot effect common */
+.dot {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/* dot effect common */
+
+.box-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* check box common */
+.check-box .label {
+    display: flex;
+    align-items: center;
+}
+
+.check-box input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.check-box .inp {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 100%;
+    border: 0.1rem solid var(--gray-300);
+}
+.check-box .text {
+    color: var(--text-gray);
+}
+.check-box input:checked ~ .inp {
+    border-color: var(--primary-color);
+}
+.check-box input:checked ~ .text {
+    color: var(--primary-color);
+    text-decoration: line-through;
+}
+/* check box common */
+
+.label-blue {
+    height: 18px;
+    line-height: 18px;
+    font-size: 1.1rem;
+    background: #E2EFF9;
+    color: var(--primary-color);
+    font-weight: 400;
+    padding: 0 0.4rem;
+    border-radius: 0.3rem;
 }
