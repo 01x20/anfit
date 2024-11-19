@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+.tab-nav {
+    display: flex;
+    border-bottom: 0.1rem solid var(--border-color);
+
+    .nav-btn {
+        width: 33.33%;
+        text-align: center;
+        height: 3rem;
+        line-height: 3rem;
+        position: relative;
+        font-size: 1.4rem;
+        color: var(--text-gray);
+
+        &.active {
+            font-weight: 700;
+            color: var(--text-color);
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 0.3rem;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--text-color);
+            }
+        }
+    }
+}
+
+.tab-contents {
+    margin-top: 2rem;
+
+    //센터 소개
+    .info-slide {
+        margin-top: 1rem;
+
+        .swiper-slide {
+            width: 20rem;
+            height: 20rem;
+            border-radius: 0.8rem;
+            background: var(--border-color);
+
+            &:last-child {margin-right: 0 !important;}
+        }
+    }
+
+    .quotation-box {
+        margin: 2rem 0 3rem;
+    }
+
+    .map-wrap {
+        padding: 1rem;
+        border-radius: 0.8rem;
+        border: 0.1rem solid #ADC9DF;
+        box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+
+        #map {
+            width: 100%;
+            height: 9.5rem;
+            border-radius: 0.8rem;
+        }
+        .address-wrap {
+            margin-top: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 1.5rem;
+                height: 1.5rem;
+                background: url('../../assets/images/icon-mark.png')50% 50% no-repeat;
+                background-size: 100%;
+                left: 0;
+                top: 0.3rem;
+            }
+
+            .name {
+                font-size: 1.4rem;
+                font-weight: 700;
+                color: var(--primary-color);
+                margin-bottom: 0.5rem;
+            }
+
+            .detail {
+                background: url('../../assets/images/icon-copy.png') right center no-repeat;
+                background-size: 1.2rem 1.3rem;
+                padding-right: 1.4rem;
+                display: inline-block;
+            }
+        }
+    }
+
+    .parking-info {
+        margin-top: 0.8rem;
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+        background: url('../../assets/images/icon-parking.png') 0 0.2rem no-repeat;
+        padding-left: 1.6rem;
+        background-size: 1.4rem;
+    }
+
+    //코치 소개
+    .slogan-wrap {
+        text-align: center;
+
+        .title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .slogan-box {
+            border: 0.1rem solid #ADC9DF;
+            border-radius: 0.8rem;
+            box-shadow: inset 0 -0.3rem 0.4rem rgba(0,0,0,0.05);
+            line-height: 2.3rem;
+
+            &::before {top: -0.8rem; left: 0.3rem;}
+            &::after {bottom: -0.8rem; right: 0.3rem;}
+        }
+    }
+
+    .coach-wrap {
+        .coach {
+            margin-bottom: 2rem;
+
+            &:last-child {margin-bottom: 0;}
+
+            .info {
+                display: flex;
+                font-weight: 700;
+                font-size: 1.6rem;
+                align-items: flex-end;
+                margin-bottom: 0.5rem;
+
+                .sns-title {
+                    margin-left: 0.4rem;
+                    font-weight: 400;
+                }
+            }
+
+            .desc {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+                color: var(--text-gray);
+            }
+        }
+
+        .info-slide {
+            .swiper-slide {
+                width: 12.5rem;
+                height: 15rem;
+            }
+        }
+    }
+
+    //수강권 안내
+    .sub-tab-nav {
+        display: flex;
+        align-items: center;
+        background: var(--primary-gray);
+        height: 3.5rem;
+        line-height: 3.5rem;
+        border-radius: 0.3rem;
+        width: 100%;
+        margin-bottom: 1rem;
+
+        .sub-nav-btn {
+            width: 50%;
+            text-align: center;
+            color: var(--text-gray);
+
+            &.active {
+                background: var(--primary-color);
+                color: var(--color-white);
+                border-radius: 0.3rem;
+                font-weight: 700;
+            }
+        }
+    }
+}

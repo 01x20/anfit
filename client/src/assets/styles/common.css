@@ -14,19 +14,6 @@
     color: var(--primary-color);
 }
 
-@font-face {
-    font-family: "Pretendard";
-    src: url("../fonts/Pretendard-Regular.woff") format("woff"),
-    url("../fonts/Pretendard-Regular.woff") format("woff2");
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: "Pretendard";
-    src: url("../fonts/Pretendard-Bold.woff") format("woff"),
-    url("../fonts/Pretendard-Bold.woff2") format("woff2");
-    font-weight: 700;
-  }
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr,
 acronym, address, big, cite, code,del, dfn, em, img, ins, kbd,
@@ -39,6 +26,7 @@ summary,time, mark, audio, video, input, button, select, textarea {
     padding: 0;
     vertical-align: top;
     box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 article, aside, details, figcaption, figure,
@@ -95,7 +83,6 @@ html {
     color: var(--text-color);
     line-height: 1.5;
     font-weight: 400;
-    font-family: 'Pretendard', sans-serif;
 }
 textarea {
     resize: none;
@@ -217,4 +204,47 @@ table {
 .label-box.gray {
     background: var(--primary-gray);
     color: var(--text-gray);
+}
+
+
+/* sns 아이콘 title */
+.sns-title {
+    position: relative;
+    padding-left: 1.8rem;
+    font-size: 1.4rem;
+}
+.sns-title::before {
+    position: absolute;
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url('../images/icon-instagram.png') 50% 50% no-repeat;
+    background-size: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* sns 아이콘 title */
+
+.quotation-box {
+    text-align: center;
+    padding: 0.6rem;
+    position: relative;
+}
+.quotation-box::before, .quotation-box::after {
+    position: absolute;
+    content: '';
+    width: 2.2rem;
+    height: 1.6rem;
+    background: url('../images/icon-double-quotation.png') 0 0 no-repeat;
+    background-size: auto 1.6rem;
+    left: 0;
+    top: 0;
+}
+.quotation-box::after {
+    left: auto;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    background-position-x: -2.1rem;
 }
