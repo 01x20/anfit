@@ -1,4 +1,6 @@
 import React from "react";
+import PriceList from './PriceList';
+import Table from '../../components/Table/Table';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -36,6 +38,101 @@ function AnfitInfo() {
   
 
   const [currentTab, clickTab] = useState(0);
+  const [currentSubTab, setCurrentSubTab] = useState(0);
+
+  //회원권 안내 테이블
+  const columns = [
+    { header: '회원권 종류', accessor: 'type', rowspan: (row) => row.items?.length || 2 },
+    { header: '-', accessor: 'count', },
+    { header: '소진기간', accessor: 'limit' },
+  ];
+  
+  const data = [
+    { type: 'PT', count: '10회', limit: '5주 이내'},
+    { type: '', count: '20회', limit: '10주 이내' },
+    { type: '그룹 운동 10회', count: '', limit: '8주 이내' },
+  ];
+
+  //횟수권
+  const countTypePrice = [
+    {
+      count: '1회',
+      price: '35,000원',
+      regularPrice: null,
+      labels: [{ text: '정가', color: 'gray' }],
+      limit: null,
+    },
+    {
+      count: '4회',
+      price: '135,000원',
+      regularPrice: '140,000원',
+      labels: [
+        { text: '할인가', color: 'red' },
+        { text: '대학생 할인가능', color: 'blue' },
+      ],
+      limit: '30일 이내 소진',
+    },
+    {
+      count: '10회',
+      price: '350,000원',
+      regularPrice: '300,000원',
+      labels: [
+        { text: '할인가', color: 'red' },
+        { text: '대학생 할인가능', color: 'blue' },
+      ],
+      limit: '40일 이내 소진',
+    },
+    {
+      count: '30회',
+      price: '1,050,000원',
+      regularPrice: '810,000원',
+      labels: [
+        { text: '할인가', color: 'red' },
+        { text: '홀딩 가능(7일)', color: 'green' },
+      ],
+      limit: '110일 이내 소진',
+    },
+    {
+      count: '50회',
+      price: '1,750,000원',
+      regularPrice: '1,250,000원',
+      labels: [
+        { text: '할인가', color: 'red' },
+        { text: '홀딩 가능(14일)', color: 'green' },
+      ],
+      limit: '180일 이내 소진',
+    },
+  ];
+
+  //개월권
+  const monthTypePrice = [
+    {
+      count: '1개월',
+      price: '300,000원',
+      regularPrice: null,
+      labels: [{ text: '대학생 할인가능', color: 'blue' }],
+      limit: null,
+    },
+    {
+      count: '3개월',
+      price: '750,000원',
+      regularPrice: null,
+      labels: [
+        { text: '홀딩 가능(7일)', color: 'green' },
+      ],
+      limit: null,
+    },
+    {
+      count: '6개월',
+      price: '1,200,000원',
+      regularPrice: null,
+      labels: [
+        { text: '홀딩 가능(14일)', color: 'green' },
+      ],
+      limit: null,
+    },
+  ];
+
   const menuArr = [
     { name : '센터 소개', content : 
       <div className="sns-wrap">
@@ -137,12 +234,42 @@ function AnfitInfo() {
     { name : '수강권 안내', content : 
       <>
         <ul className="sub-tab-nav">
-          <li className="sub-nav-btn active">그룹 운동</li>
-          <li className="sub-nav-btn">PT</li>
+          {['그룹 운동', 'PT'].map((subTabName, subTabIndex) => (
+            <li key={subTabIndex} className={
+              currentSubTab === subTabIndex
+              ? 'sub-nav-btn active'
+              : 'sub-nav-btn'
+            }
+            onClick={() => setCurrentSubTab(subTabIndex)}>
+              {subTabName}
+            </li>
+          ))}
         </ul>
         <div className="pass-notice">
           * 부가세 별도<br/>
           * 대학생 할인 10%
+        </div>
+        <div className="sub-tab-contents content-bottom-line">
+          {currentSubTab === 0 &&
+          <>
+            <div className="price-box">
+              <PriceList title="횟수권" items={countTypePrice}/>
+            </div>
+            <div className="price-box">
+              <PriceList title="개월권" items={monthTypePrice}/>
+            </div>
+          </>
+          }
+          {currentSubTab === 1 && <div>Sub Tab B Content</div>}
+        </div>
+        <div className="info-detail">
+          <div className="box-title">회원권 안내</div>
+            <ul className="detail-list">
+              <li>
+                <p className="title">회원권 사용 기간</p>
+                <Table columns={columns} data={data} />
+              </li>
+            </ul>
         </div>
       </>
      },

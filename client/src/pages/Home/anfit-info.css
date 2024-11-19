@@ -157,4 +157,73 @@
   color: var(--color-white);
   border-radius: 0.3rem;
   font-weight: 700;
+}
+.tab-contents .pass-notice {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+.tab-contents .sub-tab-contents {
+  margin-bottom: 2rem;
+}
+.tab-contents .price-box {
+  margin-bottom: 2rem;
+}
+.tab-contents .price-box .title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.tab-contents .price-box .price-list li {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 5rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--border-color);
+}
+.tab-contents .price-box .price-list .left-info, .tab-contents .price-box .price-list .right-info {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.tab-contents .price-box .price-list .left-info .count {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  width: 3.4rem;
+}
+.tab-contents .price-box .price-list .left-info .price {
+  font-size: 1.4rem;
+  position: relative;
+  font-weight: 700;
+}
+.tab-contents .price-box .price-list .left-info .price.type1 {
+  padding-top: 1.3rem;
+}
+.tab-contents .price-box .price-list .left-info .price.type1 .regular-price {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  text-decoration: line-through;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: 400;
+  background: url("../../assets/images/icon-discount.png") 0 50% no-repeat;
+  background-size: 1.35rem;
+  padding-left: 1.5rem;
+}
+.tab-contents .price-box .price-list .right-info {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.tab-contents .price-box .price-list .right-info .label-box {
+  margin-left: 0.2rem;
+}
+.tab-contents .price-box .price-list .right-info .limit {
+  display: 100%;
+  font-size: 1.2rem;
 }/*# sourceMappingURL=anfit-info.css.map */
