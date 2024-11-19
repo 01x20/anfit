@@ -190,8 +190,8 @@ table {
 }
 
 .label-box {
-    height: 18px;
-    line-height: 20px;
+    height: 1.8rem;
+    line-height: 1.7rem;
     font-size: 1.1rem;
     font-weight: 400;
     padding: 0 0.4rem;

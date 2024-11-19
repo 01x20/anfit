@@ -105,7 +105,7 @@ function Home() {
             </div>
             <div className="info-bottom">
               <p className="date">2024. 11. 11 (월) 18:30 ~ 19:20</p>
-              <p className="num col-blue">예약 완료</p>
+              <strong className="num col-blue">예약 완료</strong>
             </div>
           </div>
         </li>
@@ -119,7 +119,7 @@ function Home() {
             </div>
             <div className="info-bottom">
               <p className="date">2024. 11. 13 (수) 18:30 ~ 19:20</p>
-              <p className="num col-blue">예약 완료</p>
+              <strong className="num col-blue">예약 완료</strong>
             </div>
           </div>
         </li>
