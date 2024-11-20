@@ -7,7 +7,7 @@ import ClassPass from "../pages/ClassPass/ClassPass";
 import ClassReserv from "../pages/ClassReserv/ClassReserv";
 import Community from "../pages/Community/Community";
 import Mypage from "../pages/Mypage/Mypage";
-import AnfitInfo from '../pages/Home/AnfitInfo';
+import AnfitInfo from '../pages/Home/AnfitInfo/AnfitInfo';
 
 const Router = () => {
     return (

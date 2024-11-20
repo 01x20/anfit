@@ -1,12 +1,12 @@
 import React from "react";
 import PriceList from './PriceList';
-import Table from '../../components/Table/Table';
+import Table from '../../../components/Table/Table';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import './anfit-info.css';
-import markerIcon from '../../assets/images/icon-marker.png';
+import markerIcon from '../../../assets/images/icon-marker.png';
 
 const { kakao } = window;
 
