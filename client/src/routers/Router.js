@@ -11,7 +11,7 @@ import AnfitInfo from '../pages/Home/AnfitInfo/AnfitInfo';
 
 const Router = () => {
     return (
-        <BrowserRouter basename="/">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
