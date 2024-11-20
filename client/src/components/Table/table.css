@@ -1,0 +1,18 @@
+table.table-wrap {
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+table.table-wrap th, table.table-wrap td {
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid var(--border-color);
+  vertical-align: middle;
+}
+table.table-wrap th.tl, table.table-wrap td.tl {
+  text-align: left;
+}
+table.table-wrap th.tit {
+  background: var(--border-color);
+  font-weight: 700;
+}/*# sourceMappingURL=table.css.map */

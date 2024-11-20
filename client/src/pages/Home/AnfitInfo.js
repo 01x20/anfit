@@ -42,15 +42,15 @@ function AnfitInfo() {
 
   //회원권 안내 테이블
   const columns = [
-    { header: '회원권 종류', accessor: 'type', rowspan: (row) => row.items?.length || 2 },
-    { header: '-', accessor: 'count', },
-    { header: '소진기간', accessor: 'limit' },
+    { header: '회원권 종류', accessor: 'type', colspan: 2, colWidth: '25%'},
+    { header: '', accessor: 'count', colWidth: '25%'},
+    { header: '소진기간', accessor: 'limit', colWidth: '50%'},
   ];
   
   const data = [
-    { type: 'PT', count: '10회', limit: '5주 이내'},
-    { type: '', count: '20회', limit: '10주 이내' },
-    { type: '그룹 운동 10회', count: '', limit: '8주 이내' },
+    { type: 'PT', count: '10회', limit: '5주 이내', colspan: { type: 1 }, rowspan: { type: 2 }},
+    { type: '', count: '20회', limit: '10주 이내'},
+    { type: '그룹 운동 10회', count: '', limit: '8주 이내', rowspan: { type: 1 }, colspan: { type: 2 }},
   ];
 
   //횟수권
@@ -84,8 +84,8 @@ function AnfitInfo() {
     },
     {
       count: '30회',
-      price: '1,050,000원',
-      regularPrice: '810,000원',
+      price: '810,000원',
+      regularPrice: '1,050,000원',
       labels: [
         { text: '할인가', color: 'red' },
         { text: '홀딩 가능(7일)', color: 'green' },
@@ -94,8 +94,8 @@ function AnfitInfo() {
     },
     {
       count: '50회',
-      price: '1,750,000원',
-      regularPrice: '1,250,000원',
+      price: '1,250,000원',
+      regularPrice: '1,750,000원',
       labels: [
         { text: '할인가', color: 'red' },
         { text: '홀딩 가능(14일)', color: 'green' },
@@ -130,6 +130,70 @@ function AnfitInfo() {
         { text: '홀딩 가능(14일)', color: 'green' },
       ],
       limit: null,
+    },
+  ];
+
+  //다빈 코치
+  const dbPtTypePrice = [
+    {
+      count: '10회',
+      types: [
+        { price: '600,000원', detail: '회당 60,000원' },
+        { price: '850,000원', detail: '회당 75,000원 · 인당 37,500원' },
+      ],
+    },
+    {
+      count: '20회',
+      types: [
+        { price: '1,100,000원', detail: '회당 55,000원' },
+        { price: '1,600,000원', detail: '회당 80,000원 · 인당 40,000원' },
+      ],
+    },
+    {
+      count: '30회',
+      types: [
+        { price: '1,500,000원', detail: '회당 50,000원' },
+        { price: '2,250,000원', detail: '회당 75,000원 · 인당 37,500원' },
+      ],
+    },
+    {
+      count: '50회',
+      types: [
+        { price: '2,300,000원', detail: '회당 46,000원' },
+        { price: '3,500,000원', detail: '회당 70,000원 · 인당 35,000원' },
+      ],
+    },
+  ];
+  
+  //빙수 코치
+  const bsPtTypePrice = [
+    {
+      count: '10회',
+      types: [
+        { price: '700,000원', detail: '회당 70,000원' },
+        { price: '900,000원', detail: '회당 90,000원 · 인당 45,000원' },
+      ],
+    },
+    {
+      count: '20회',
+      types: [
+        { price: '1,130,000원', detail: '회당 65,000원' },
+        { price: '1,700,000원', detail: '회당 85,000원 · 인당 42,500원' },
+      ],
+    },
+    {
+      count: '30회',
+      types: [
+        { price: '1,800,000원', detail: '회당 60,000원' },
+        { price: '2,400,000원', detail: '회당 80,000원 · 인당 40,000원' },
+      ],
+    },
+    {
+      count: '50회',
+      types: [
+        { price: '2,800,000원', detail: '회당 56,000원' },
+        { price: '3,800,000원', detail: '회당 76,000원 · 인당 38,000원' },
+      ],
     },
   ];
 
@@ -171,7 +235,7 @@ function AnfitInfo() {
             <div className="name">안핏 여성 전용 PT & 그룹 운동</div>
             <div className="detail">
               <CopyToClipboard onCopy={() => alert('복사')} text="서울특별시 성북구 아리랑로4길 8, 2층">
-                <text>서울특별시 성북구 아리랑로4길 8, 2층</text>
+                <div>서울특별시 성북구 아리랑로4길 8, 2층</div>
               </CopyToClipboard>
             </div>
           </div>
@@ -253,21 +317,51 @@ function AnfitInfo() {
           {currentSubTab === 0 &&
           <>
             <div className="price-box">
-              <PriceList title="횟수권" items={countTypePrice}/>
+              <PriceList title="횟수권" items={countTypePrice} type="group"/>
             </div>
             <div className="price-box">
-              <PriceList title="개월권" items={monthTypePrice}/>
+              <PriceList title="개월권" items={monthTypePrice} type="group"/>
             </div>
           </>
           }
-          {currentSubTab === 1 && <div>Sub Tab B Content</div>}
+          {currentSubTab === 1 &&
+          <>
+            <div className="price-box">
+              <PriceList title="다빈 코치" items={dbPtTypePrice} />
+            </div>
+            <div className="price-box">
+              <PriceList title="빙수 코치" items={bsPtTypePrice} />
+            </div>
+            <div className="pt-price-notice">
+              PT <strong>누적 51회</strong>부터 <strong>횟수 제한 없이 단가 고정</strong>
+            </div>
+            <ul className="price-notice-list">
+              <li><p className="pt-type-label">1:1 PT</p> 55,000원</li>
+              <li><p className="pt-type-label">2:1 PT</p> 75,000원</li>
+            </ul>
+          </>
+          }
         </div>
         <div className="info-detail">
           <div className="box-title">회원권 안내</div>
             <ul className="detail-list">
               <li>
                 <p className="title">회원권 사용 기간</p>
-                <Table columns={columns} data={data} />
+                <Table columns={columns} data={data} thTitle />
+              </li>
+              <li>
+                <p className="title">회원권 사용 기간</p>
+                <div>
+                  운동공간 오픈 이후 4주 이내 회원권 사용을 시작해야 합니다.<br/>
+                  4주 이후 자동으로 회원권이 개시됩니다.
+                </div>
+              </li>
+              <li>
+                <p className="title">회원권 양도</p>
+                <div>
+                  회원권 개시 전 양도는 가능하나,<br/>
+                  개시 후 양도는 불가합니다.
+                </div>
               </li>
             </ul>
         </div>
@@ -284,7 +378,7 @@ function AnfitInfo() {
     <div className="box-title">안핏 안내</div>
     <ul className="tab-nav">
       {menuArr.map((el,index) => (
-        <li className={index === currentTab ? "nav-btn active" : "nav-btn" }
+        <li key={index} className={index === currentTab ? "nav-btn active" : "nav-btn" }
         onClick={() => selectMenuHandler(index)}>{el.name}</li>
       ))}
     </ul>
