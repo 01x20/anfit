@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/anfit/static/css/main.0dc393d2.css",
+    "main.js": "/anfit/static/js/main.432f5bc6.js",
+    "index.html": "/anfit/index.html",
+    "main.0dc393d2.css.map": "/anfit/static/css/main.0dc393d2.css.map",
+    "main.432f5bc6.js.map": "/anfit/static/js/main.432f5bc6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0dc393d2.css",
+    "static/js/main.432f5bc6.js"
+  ]
+}
