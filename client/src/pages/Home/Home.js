@@ -5,7 +5,7 @@ import { Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 
-import './home.css';
+import './Home.css';
 
 function Home() {
   return (

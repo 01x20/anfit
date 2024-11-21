@@ -1,5 +1,5 @@
 import React from "react";
-import './classReserv.css';
+import './ClassReserv.css';
 
 function ClassReserv() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import './community.css';
+import './Community.css';
 
 function Community() {
   return (

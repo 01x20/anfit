@@ -1,5 +1,5 @@
 import React from "react";
-import './classPass.css';
+import './ClassPass.css';
 
 function ClassPass() {
   return (

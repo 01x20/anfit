@@ -19,7 +19,7 @@ const Router = () => {
                     <Route path="reservation" element={<ClassReserv />} />
                     <Route path="community" element={<Community />} />
                     <Route path="mypage" element={<Mypage />} />
-                    <Route path="anfit-info" element={<AnfitInfo />} />
+                    <Route path="/anfit-info" element={<AnfitInfo />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
