@@ -1,11 +1,12 @@
 import React from "react";
-import PriceList from './PriceList';
-import Table from '../../../components/common/Table/Table';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import './anfit-info.css';
+import PriceList from './PriceList';
+import Table from '../../../components/common/Table/Table';
+import Tab from '../../../components/common/Tab/Tab';
+
 import markerIcon from '../../../assets/images/icon-marker.png';
 
 const { kakao } = window;
@@ -13,6 +14,8 @@ const { kakao } = window;
 function AnfitInfo() {
 
   useEffect(() => {
+    import ('./anfit-info.css');
+
     const container = document.getElementById('map'),
     option = { 
         center: new kakao.maps.LatLng(37.5944870033424, 127.016621618562),
@@ -37,7 +40,6 @@ function AnfitInfo() {
   }, [])
   
 
-  const [currentTab, clickTab] = useState(0);
   const [currentSubTab, setCurrentSubTab] = useState(0);
 
   //회원권 안내 테이블
@@ -197,7 +199,7 @@ function AnfitInfo() {
     },
   ];
 
-  const menuArr = [
+  const tabArr = [
     { name : '센터 소개', content : 
       <div className="sns-wrap">
         <div className="sns-title">anfit_official_ss</div>
@@ -369,22 +371,10 @@ function AnfitInfo() {
      },
   ];
 
-  const selectMenuHandler = (index) => {
-    clickTab(index);
-  };
-
   return (
     <>
     <div className="box-title">안핏 안내</div>
-    <ul className="tab-nav">
-      {menuArr.map((el,index) => (
-        <li key={index} className={index === currentTab ? "nav-btn active" : "nav-btn" }
-        onClick={() => selectMenuHandler(index)}>{el.name}</li>
-      ))}
-    </ul>
-    <div className="tab-contents">
-      <div>{menuArr[currentTab].content}</div>
-    </div>
+      <Tab tabArr={tabArr} />
     </>
   );
 }

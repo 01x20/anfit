@@ -3,7 +3,7 @@
     border-bottom: 0.1rem solid var(--border-color);
 
     .nav-btn {
-        width: 33.33%;
+        width: 50%;
         text-align: center;
         height: 3rem;
         line-height: 3rem;
@@ -27,4 +27,8 @@
             }
         }
     }
+}
+
+.tab-contents {
+    margin-top: 2rem;
 }

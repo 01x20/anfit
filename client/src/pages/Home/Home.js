@@ -1,13 +1,16 @@
 import React from "react";
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 
-import './Home.css';
-
 function Home() {
+  useEffect(() => {
+    import('./Home.css');
+  }, []);
+
   return (
     <>
       <Swiper
@@ -33,8 +36,8 @@ function Home() {
 
       <div className="quick-icon-list">
         <Link to="/" className="btn-quick btn0">습관 만들기</Link>
-        <Link to="anfit-info" className="btn-quick btn1">안핏 안내</Link>
-        <Link to="class-pass" className="btn-quick btn2">수강권 정보</Link>
+        <Link to="/anfit-info" className="btn-quick btn1">안핏 안내</Link>
+        <Link to="/class-pass" className="btn-quick btn2">수강권 정보</Link>
         <Link to="/" className="btn-quick btn3">예약하기</Link>
       </div>
 

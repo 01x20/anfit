@@ -1,8 +1,19 @@
 import React from "react";
-import './ClassPass.css';
+import { useEffect } from 'react';
+
 import ClassPassTop from "../../components/common/ClassPassTop/ClassPassTop";
+import Tab from '../../components/common/Tab/Tab';
 
 function ClassPass() {
+  useEffect(() => {
+      import('./ClassPass.css');
+  }, []);
+
+  const tabArr = [
+    {name : '수강권 상세', content : <></>},
+    {name : '이용내역', content : <></>}
+  ];
+
   return (
       <>
         <ClassPassTop />
@@ -19,6 +30,7 @@ function ClassPass() {
             <p className="num">잔여 2회</p>
           </div>
         </div>
+        <Tab tabArr={tabArr} />
       </>
   );
 }
