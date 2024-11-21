@@ -11,15 +11,15 @@ import AnfitInfo from '../pages/Home/AnfitInfo/AnfitInfo';
 
 const Router = () => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="/">
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/anfit-info" element={<AnfitInfo />} />
                     <Route path="class-pass" element={<ClassPass />} />
                     <Route path="reservation" element={<ClassReserv />} />
                     <Route path="community" element={<Community />} />
                     <Route path="mypage" element={<Mypage />} />
+                    <Route path="anfit-info" element={<AnfitInfo />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
