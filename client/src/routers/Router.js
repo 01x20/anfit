@@ -14,8 +14,8 @@ const Router = () => {
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Layout>
                 <Routes>
-                    <Route path="/anfit/*" element={<Home />} />
-                    <Route path="anfit-info" element={<AnfitInfo />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/anfit-info" element={<AnfitInfo />} />
                     <Route path="class-pass" element={<ClassPass />} />
                     <Route path="reservation" element={<ClassReserv />} />
                     <Route path="community" element={<Community />} />
