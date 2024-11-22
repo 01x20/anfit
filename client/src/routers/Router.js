@@ -15,6 +15,7 @@ const Router = () => {
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/anfit" element={<Home />} />
                     <Route path="class-pass" element={<ClassPass />} />
                     <Route path="reservation" element={<ClassReserv />} />
                     <Route path="community" element={<Community />} />

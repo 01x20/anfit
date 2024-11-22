@@ -1,0 +1,13 @@
+.button-box {
+  margin-top: 3rem;
+}
+.button-box button {
+  background: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-white);
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 0.8rem;
+}/*# sourceMappingURL=Button.css.map */

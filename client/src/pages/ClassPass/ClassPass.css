@@ -4,7 +4,145 @@
   max-width: 46rem;
   margin-bottom: 3rem;
 }
+.common-info-box.pass-info-bottom {
+  padding: 0;
+  margin: 2rem 0;
+  max-width: none;
+  height: 5.8rem;
+  flex-direction: row;
+  align-items: center;
+}
+.common-info-box.pass-info-bottom .box {
+  width: 33.33%;
+  text-align: center;
+  position: relative;
+}
+.common-info-box.pass-info-bottom .box::before {
+  position: absolute;
+  content: "";
+  width: 0.1rem;
+  height: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--border-color);
+  right: 0;
+}
+.common-info-box.pass-info-bottom .box:last-child::before {
+  display: none;
+}
+.common-info-box.pass-info-bottom .title {
+  font-size: 1.15rem;
+  color: var(--text-gray);
+  margin-bottom: -0.2rem;
+}
+.common-info-box.pass-info-bottom .num {
+  font-size: 1.4rem;
+}
 
 .tab-nav .nav-btn {
   width: 50%;
+}
+
+.pass-detail-box .pass-info-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.pass-detail-box .pass-info-top .name {
+  font-size: 1.4rem;
+}
+.pass-detail-box .pass-info-top .detail {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  margin-left: 0.4rem;
+}
+.pass-detail-box .pass-progress-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.pass-detail-box .pass-progress-box .info {
+  font-size: 1.2rem;
+  padding-left: 1.2rem;
+  position: relative;
+  color: var(--text-gray);
+}
+.pass-detail-box .pass-progress-box .info::before {
+  position: absolute;
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 100%;
+  background: var(--primary-gray);
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+}
+.pass-detail-box .pass-progress-box .info.done {
+  color: var(--primary-color);
+}
+.pass-detail-box .pass-progress-box .info.done::before {
+  background: var(--primary-color);
+}
+.pass-detail-box .pass-progress-box .bar {
+  margin-top: 0.5rem;
+  height: 1rem;
+  width: 100%;
+  border-radius: 100rem;
+  background: var(--primary-gray);
+  position: relative;
+}
+.pass-detail-box .pass-progress-box .bar > p {
+  position: absolute;
+  border-radius: 100rem;
+  height: 100%;
+  background: var(--primary-color);
+  left: 0;
+  min-width: 1rem;
+}
+
+.history-filter {
+  display: flex;
+  align-items: center;
+}
+.history-filter > button {
+  font-size: 1.4rem;
+  color: var(--text-gray);
+  margin-right: 0.5rem;
+}
+.history-filter > button:last-child {
+  margin-right: 0;
+}
+.history-filter > button.active {
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.pass-history-box {
+  margin-top: 2rem;
+}
+.pass-history-box .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.pass-history-box .list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+.pass-history-box .list li:last-child {
+  margin-bottom: 0;
+}
+.pass-history-box .list li .history-line {
+  display: flex;
+  align-items: center;
+}
+.pass-history-box .list li .history-line .label-box {
+  margin-right: 0.4rem;
+}
+.pass-history-box .list li .class-name {
+  font-size: 1.2rem;
+  color: var(--text-gray);
 }/*# sourceMappingURL=ClassPass.css.map */

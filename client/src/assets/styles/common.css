@@ -271,3 +271,24 @@ table {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.common-notice-box {
+    padding: 0.8rem 0.8rem 0.8rem 2.6rem;
+    background: var(--primary-gray);
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    line-height: 1.7;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 1.4rem;
+        height: 1.4rem;
+        background: url('../images/icon-notice.png');
+        background-size: 100%;
+        left: 0.8rem;
+        top: 1.15rem;
+    }
+}

@@ -14,8 +14,8 @@ const { kakao } = window;
 function AnfitInfo() {
 
   useEffect(() => {
-    import ('./anfit-info.css');
-
+    import ('./Anfit-info.css');
+      
     const container = document.getElementById('map'),
     option = { 
         center: new kakao.maps.LatLng(37.5944870033424, 127.016621618562),
@@ -39,7 +39,6 @@ function AnfitInfo() {
       map.setZoomable(false);
   }, [])
   
-
   const [currentSubTab, setCurrentSubTab] = useState(0);
 
   //회원권 안내 테이블
@@ -374,7 +373,7 @@ function AnfitInfo() {
   return (
     <>
     <div className="box-title">안핏 안내</div>
-      <Tab tabArr={tabArr} />
+    <Tab tabArr={tabArr} />
     </>
   );
 }
