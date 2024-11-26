@@ -89,9 +89,7 @@ function ClassPass() {
             <button type="button" className="active">가까운 순</button>
             <button type="button">먼 순</button>
         </div>
-        <div className="pass-history-box">
-          <HistoryList items={historyArr} />
-        </div>
+        <HistoryList items={historyArr} />
       </>
     }
   ];
