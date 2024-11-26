@@ -1,0 +1,102 @@
+.calendar-wrap {
+  padding-bottom: 2rem;
+  position: relative;
+}
+.calendar-wrap::before {
+  position: absolute;
+  content: "";
+  width: calc(100% + 3.2rem);
+  height: 0.8rem;
+  background: var(--border-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.calendar-wrap .cal-header .left-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.calendar-wrap .cal-days {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.calendar-wrap .cal-days .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 14.2857142857%;
+  font-size: 1.2rem;
+  line-height: 2.8rem;
+}
+.calendar-wrap .cal-days .col:first-child {
+  color: var(--secondary-color);
+}
+.calendar-wrap .cal-days .col:last-child {
+  color: var(--primary-color);
+}
+.calendar-wrap .cal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.calendar-wrap .cal-body .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+.calendar-wrap .cal-body .row .col {
+  width: 14.2857142857%;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+}
+.calendar-wrap .cal-body .row .col:first-child {
+  color: var(--secondary-color);
+}
+.calendar-wrap .cal-body .row .col:last-child {
+  color: var(--primary-color);
+}
+.calendar-wrap .cal-body .row .col.disabled {
+  opacity: 0.4;
+}
+.calendar-wrap .cal-body .row .col.today {
+  color: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+.calendar-wrap .cal-body .row .col.today::before {
+  position: absolute;
+  content: "";
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 100%;
+  background: var(--primary-color);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.calendar-wrap .cal-body .row .col.active {
+  position: relative;
+}
+.calendar-wrap .cal-body .row .col.active::before {
+  position: absolute;
+  content: "";
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 100%;
+  border: 0.1rem solid var(--primary-color);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}/*# sourceMappingURL=Calendar.css.map */

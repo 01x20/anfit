@@ -1,0 +1,49 @@
+.reserv-wrap {
+    .reservation-list {
+        padding-top: 2rem;
+    }
+
+    .tab-nav {
+        border-bottom: 0;
+        gap: 1rem;
+
+        .nav-btn {
+            height: 3.8rem;
+            line-height: 3.6rem;
+            border-radius: 0.8rem;
+            border: 0.1rem solid var(--border-color);
+
+            &.active {
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+                &::before {display: none;}
+            }
+        }
+    }
+    .tab-contents {
+        margin-top: 0.5rem;
+
+        .text {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+        .time-list {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+
+            li {
+                font-size: 1.4rem;
+                padding: 0.4rem 1.2rem;
+                border: 0.1rem solid var(--border-color);
+                border-radius: 100rem;
+
+                &.active {
+                    border-color: var(--primary-color);
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}

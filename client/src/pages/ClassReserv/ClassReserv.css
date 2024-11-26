@@ -1,1 +1,43 @@
-@charset "utf-8";
+.reserv-wrap .reservation-list {
+  padding-top: 2rem;
+}
+.reserv-wrap .tab-nav {
+  border-bottom: 0;
+  gap: 1rem;
+}
+.reserv-wrap .tab-nav .nav-btn {
+  height: 3.8rem;
+  line-height: 3.6rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--border-color);
+}
+.reserv-wrap .tab-nav .nav-btn.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+.reserv-wrap .tab-nav .nav-btn.active::before {
+  display: none;
+}
+.reserv-wrap .tab-contents {
+  margin-top: 0.5rem;
+}
+.reserv-wrap .tab-contents .text {
+  font-size: 1.2rem;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+.reserv-wrap .tab-contents .time-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+.reserv-wrap .tab-contents .time-list li {
+  font-size: 1.4rem;
+  padding: 0.4rem 1.2rem;
+  border: 0.1rem solid var(--border-color);
+  border-radius: 100rem;
+}
+.reserv-wrap .tab-contents .time-list li.active {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}/*# sourceMappingURL=ClassReserv.css.map */

@@ -1,0 +1,102 @@
+@mixin flex-column($justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin flex-row($justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+.calendar-wrap {
+    padding-bottom: 2rem;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: calc(100% + 3.2rem);
+        height: 0.8rem;
+        background: var(--border-color);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .cal-header .left-box {
+        @include flex-row;
+        margin-bottom: 1rem;
+    }
+    .cal-days {
+        @include flex-row(space-around, center);
+
+        .col {
+            @include flex-column(flex-end, center);
+            width: calc(100% / 7);
+            font-size: 1.2rem;
+            line-height: 2.8rem;
+
+            &:first-child {color: var(--secondary-color);} //일
+            &:last-child {color: var(--primary-color);} //토
+        }
+    }
+    .cal-body {
+        @include flex-column();
+
+        .row {
+            width: 100%;
+            @include flex-row(space-around, center);
+            margin-top: 0.5rem;
+
+            .col {
+                width: calc(100% / 7);
+                text-align: center;
+                font-size: 1.4rem;
+                line-height: 2.8rem;
+
+                &:first-child {color: var(--secondary-color);} //일
+                &:last-child {color: var(--primary-color);} //토
+                &.disabled {
+                    opacity: 0.4;
+                }
+                &.today {
+                    color: var(--color-white);
+                    position: relative;
+                    z-index: 1;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: 2.8rem;
+                        height: 2.8rem;
+                        border-radius: 100%;
+                        background: var(--primary-color);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: -1;
+                    }
+                }
+
+                &.active {
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: 2.8rem;
+                        height: 2.8rem;
+                        border-radius: 100%;
+                        border: 0.1rem solid var(--primary-color);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
