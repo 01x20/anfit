@@ -28,4 +28,15 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
+}
+
+.modal-wrap .pass-list .common-info-box {
+  box-shadow: none;
+  height: auto;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.modal-wrap .pass-list .common-info-box .pass-name {
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
 }/*# sourceMappingURL=ClassPassTop.css.map */

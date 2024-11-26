@@ -1,6 +1,10 @@
 import React from "react";
 
-const HistoryList = ({items}) => {
+const HistoryList = ({items = [] }) => {
+
+    if (!items || items.length === 0) {
+        return <div>이용 내역이 없습니다.</div>;
+    }
 
     return (
         <>

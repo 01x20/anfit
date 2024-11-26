@@ -11,7 +11,7 @@ function ClassPass() {
       import('./ClassPass.css');
   }, []);
 
-  const historyArr = [
+  /*const historyArr = [
     {
       date: "2024년 11월 13일 (수)",
       lists: [
@@ -43,7 +43,9 @@ function ClassPass() {
         },
       ],
     },
-  ];
+  ];*/
+
+  const historyArr = [];
 
   const tabArr = [
     {name : '수강권 상세', content : 
