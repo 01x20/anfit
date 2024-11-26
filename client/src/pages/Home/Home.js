@@ -1,15 +1,151 @@
-import React from "react";
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 
+const RenderPassSlide = ({items}) => {
+  const navigate = useNavigate();
+  const swiperRef = useRef(null);
+
+  const handleSwiperInit = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.update();
+    }
+  };
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.update();
+    }
+  }, [items]);
+
+  return (
+  <>
+  <Swiper
+    slidesPerView={'auto'}
+    ref={swiperRef}
+    observer={true}
+    observeParents={true}
+    className="info-slide"
+    onInit={handleSwiperInit}>
+      {items.map((item, index) => (
+        <SwiperSlide onClick={() => navigate('/class-pass')} key={item.passName + index}>
+          <div className="common-info-box">
+            <div className="info-top">
+              {item.state ?
+                (<p className="label-box blue">사용 중</p>) :
+                (<p className="label-box gray">사용 중지</p>)
+              }
+              {item.types.map((type, typeIndex) => (
+                <React.Fragment key={typeIndex}>
+                  <p className="detail">{type.group}</p>
+                  <p className="detail">{type.membership}</p>
+                </React.Fragment>
+              ))}
+              <div className="pass-name">{item.passName}</div>
+            </div>
+            <div className="info-bottom">
+              <p className="date">{item.passLimit}</p>
+              <p className="num">잔여 <strong>{item.passCount}</strong>회</p>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </>
+  );
+};
+
+const RenderResList = ({lists}) => {
+  return (
+    <ul className="reservation-list">
+      {lists.map((list, index) => (
+        <li key={index}>
+          <div className="common-info-box">
+            <div className="info-top">
+              {list.labels.map((label, labelIndex) => (
+                <React.Fragment key={labelIndex}>
+                  <p className={`label-box ${label.color}`}>{label.text}</p>
+                </React.Fragment>
+              ))}
+              {list.types.map((type, typeIndex) => (
+                <React.Fragment key={typeIndex}>
+                  <p className="detail">{type.group}</p>
+                  <p className="detail">{type.membership}</p>
+                </React.Fragment>
+              ))}
+              <div className="pass-name">{list.className}</div>
+            </div>
+            <div className="info-bottom">
+              <p className="date">{list.date}</p>
+              <strong className="num col-blue">{list.state}</strong>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 function Home() {
+
   useEffect(() => {
     import('./Home.css');
   }, []);
+
+  const classPassList = [
+    {
+      state: true,
+      types: [
+        {
+          group : "1:1PT",
+          membership: "횟수제",
+        }
+      ],
+      passName : "[텀블벅 전용] 비기너 패키지 PT 2회",
+      passLimit : "2024. 11. 11 ~ 2024. 12. 10",
+      passCount : "2",
+    },
+    {
+      state: false,
+      types: [
+        {
+          group : "1:1PT",
+          membership: "횟수제",
+        }
+      ],
+      passName : "[텀블벅 전용] 비기너 패키지 PT 2회",
+      passLimit : "2024. 11. 11 ~ 2024. 12. 10",
+      passCount : "2",
+    }
+  ];
+
+  const resList = [
+    {
+      labels: [
+        {color: 'blue', text : '빙수 코치'}
+      ],
+      types: [
+        {group : '1:1PT', membership : '횟수제'}
+      ],
+      className : '[텀블벅 전용] 비기너 패키지 PT 2회',
+      date: '2024. 11. 13 (수) 18:30 ~ 19:20',
+      state: '예약 완료'
+    },
+    {
+      labels: [
+        {color: 'blue', text : '다빈 코치'}
+      ],
+      types: [
+        {group : '1:1PT', membership : '횟수제'}
+      ],
+      className : '[텀블벅 전용] 비기너 패키지 PT 2회',
+      date: '2024. 11. 13 (수) 18:30 ~ 19:20',
+      state: '예약 대기'
+    },
+  ];
 
   return (
     <>
@@ -60,73 +196,13 @@ function Home() {
       </div>
 
       <div className="box-title">나의 수강권</div>
-      <Swiper 
-        slidesPerView={'auto'}
-        className="info-slide">
-        <SwiperSlide>
-        <div className="common-info-box">
-          <div className="info-top">
-            <p className="label-box blue">사용 중</p>
-            <p className="detail">1:1PT</p>
-            <p className="detail">횟수제</p>
-            <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
-          </div>
-          <div className="info-bottom">
-            <p className="date">2024. 11. 11 ~ 2024. 12. 10</p>
-            <p className="num">잔여 2회</p>
-          </div>
-        </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="common-info-box">
-          <div className="info-top">
-            <p className="label-box gray">사용 중지</p>
-            <p className="detail">1:1PT</p>
-            <p className="detail">횟수제</p>
-            <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
-          </div>
-          <div className="info-bottom">
-            <p className="date">2024. 11. 11 ~ 2024. 12. 10</p>
-            <p className="num">잔여 2회</p>
-          </div>
-        </div>
-        </SwiperSlide>
-      </Swiper>
+      <RenderPassSlide items={classPassList} />
 
       <div className="box-title">
         예약한 수업
         <Link to="/" className="read-more"></Link>
       </div>
-      <ul className="reservation-list">
-        <li>
-          <div className="common-info-box">
-            <div className="info-top">
-              <p className="label-box blue">빙수 코치</p>
-              <p className="detail">1:1PT</p>
-              <p className="detail">횟수제</p>
-              <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
-            </div>
-            <div className="info-bottom">
-              <p className="date">2024. 11. 11 (월) 18:30 ~ 19:20</p>
-              <strong className="num col-blue">예약 완료</strong>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="common-info-box">
-            <div className="info-top">
-              <p className="label-box blue">빙수 코치</p>
-              <p className="detail">1:1PT</p>
-              <p className="detail">횟수제</p>
-              <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
-            </div>
-            <div className="info-bottom">
-              <p className="date">2024. 11. 13 (수) 18:30 ~ 19:20</p>
-              <strong className="num col-blue">예약 완료</strong>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <RenderResList lists={resList} />
     </>
   );
 }
