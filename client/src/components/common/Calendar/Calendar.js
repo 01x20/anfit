@@ -11,18 +11,16 @@ const RenderHeader = ({ currentMonth, prevMonth, nextMonth }) => {
 
     return (
         <div className="cal-header row">
-            <div className="left-box">
-                <button type="button" onClick={prevMonth}>이전</button>
-                <div className="col col-start">
-                    <span className="text">
-                        {format(currentMonth, 'yyyy')}.
-                        <span className="text month">
-                            {format(currentMonth, 'M')}.
-                        </span>
+            <button type="button" className="cal-btn prev" onClick={prevMonth}></button>
+            <div className="col col-start">
+                <span className="text">
+                    {format(currentMonth, 'yyyy')}.
+                    <span className="text month">
+                        {format(currentMonth, 'M')}.
                     </span>
-                </div>
-                <button type="button" onClick={nextMonth}>다음</button>
+                </span>
             </div>
+            <button type="button" className="cal-btn next" onClick={nextMonth}></button>
         </div>
     );
 };

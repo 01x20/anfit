@@ -1,0 +1,23 @@
+.pager-wrap {
+  margin-top: 3rem;
+}
+.pager-wrap ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pager-wrap ul li {
+  color: var(--text-gray);
+}
+.pager-wrap ul li.btn-pager {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: url("../../../assets/images/icon-cal-arrow.png") 0 0 no-repeat;
+  background-size: auto 1.4rem;
+  margin-right: 0.8rem;
+}
+.pager-wrap ul li.btn-pager.next {
+  background-position-x: -1.4rem;
+  margin-right: 0;
+  margin-left: 0.8rem;
+}/*# sourceMappingURL=Pagination.css.map */

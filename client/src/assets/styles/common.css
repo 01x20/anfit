@@ -296,3 +296,23 @@ table {
         top: 1.15rem;
     }
 }
+
+select.int, input.int {
+    border: 0.1rem solid var(--border-color);
+    border-radius: 0.6rem;
+    line-height: 3.2rem;
+    height: 3.5rem;
+    padding: 0 1rem;
+}
+select.int {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: var(--color-white) url('../images/icon-select-arrow.png') right 1rem center no-repeat;
+    background-size: 1.2rem;
+    padding: 0 3rem 0 1rem;
+}
+
+::placeholder {
+    color: var(--text-gray);
+}

@@ -11,6 +11,8 @@
     justify-content: $justify-content;
     align-items: $align-items;
 }
+
+
 .calendar-wrap {
     padding-bottom: 2rem;
     position: relative;
@@ -26,9 +28,23 @@
         transform: translateX(-50%);
     }
 
-    .cal-header .left-box {
+    .cal-header {
         @include flex-row;
         margin-bottom: 1rem;
+        font-size: 1.4rem;
+
+        .col {margin: 0 1rem;}
+
+        .cal-btn {
+            width: 1.3rem;
+            height: 1.3rem;
+            background: url('../../../assets/images/icon-cal-arrow.png') 0 0 no-repeat;
+            background-size: auto 1.3rem;
+
+            &.next {
+                background-position-x: -1.3rem; 
+            }
+        }
     }
     .cal-days {
         @include flex-row(space-around, center);

@@ -22,26 +22,81 @@
     }
     .tab-contents {
         margin-top: 0.5rem;
+    }
+    .text {
+        font-size: 1.2rem;
+        color: var(--text-gray);
+        margin-bottom: 1rem;
+    }
+    .time-list {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
 
-        .text {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 1rem;
+        li {
+            font-size: 1.4rem;
+            padding: 0.4rem 1.2rem;
+            border: 0.1rem solid var(--border-color);
+            border-radius: 100rem;
+
+            &.active {
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+            }
         }
-        .time-list {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
+
+        &.group {
+            display: block;
 
             li {
-                font-size: 1.4rem;
-                padding: 0.4rem 1.2rem;
-                border: 0.1rem solid var(--border-color);
-                border-radius: 100rem;
+                padding: 1rem;
+                border-radius: 0.8rem;
+                margin-bottom: 1rem;
 
-                &.active {
-                    border-color: var(--primary-color);
-                    color: var(--primary-color);
+                &:last-child {margin-bottom: 0;}
+
+                .time-wrap {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .time-info {
+                        font-weight: 700;
+                        font-size: 1.4rem;
+                    }
+                }
+                .list-bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 0.4rem;
+
+                    .class-info-wrap {
+                        display: flex;
+                        align-items: center;
+
+                        .class-name {
+                            margin-left: 0.4rem;
+                        }
+                    }
+                    .class-member {
+                        color: var(--text-gray);
+                        font-size: 1.2rem;
+                        position: relative;
+                        padding-left: 1.8rem;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 1.4rem;
+                            height: 1.4rem;
+                            background: url('../../assets/images/icon-reserv.png') 50% 50% no-repeat;
+                            background-size: 100%;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
                 }
             }
         }

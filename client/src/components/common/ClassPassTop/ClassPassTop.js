@@ -21,9 +21,9 @@ function ClassPassTop() {
           <ul className="pass-list">
             <li className="common-info-box">
               <div className="pass-name">[텀블벅 전용] 비기너 패키지 PT 2회</div>
-              <div class="info-bottom">
-                <p class="date">2024. 11. 11 ~ 2024. 12. 10</p>
-                <p class="num">잔여 2회</p>
+              <div className="info-bottom">
+                <p className="date">2024. 11. 11 ~ 2024. 12. 10</p>
+                <p className="num">잔여 2회</p>
               </div>
             </li>
             <li className="common-info-box">

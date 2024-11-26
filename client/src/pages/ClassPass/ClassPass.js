@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import ClassPassTop from "../../components/common/ClassPassTop/ClassPassTop";
 import Tab from '../../components/common/Tab/Tab';
@@ -7,11 +8,13 @@ import Button from '../../components/common/Button/Button';
 import HistoryList from "./HistoryList";
 
 function ClassPass() {
+  const navigate = useNavigate();
+
   useEffect(() => {
       import('./ClassPass.css');
   }, []);
 
-  /*const historyArr = [
+  const historyArr = [
     {
       date: "2024년 11월 13일 (수)",
       lists: [
@@ -43,9 +46,9 @@ function ClassPass() {
         },
       ],
     },
-  ];*/
+  ];
 
-  const historyArr = [];
+  //const historyArr = [];
 
   const tabArr = [
     {name : '수강권 상세', content : 
@@ -91,7 +94,7 @@ function ClassPass() {
             <button type="button" className="active">가까운 순</button>
             <button type="button">먼 순</button>
         </div>
-        <HistoryList items={historyArr} />
+        <HistoryList items={historyArr}/>
       </>
     }
   ];
@@ -113,7 +116,7 @@ function ClassPass() {
           </div>
         </div>
         <Tab tabArr={tabArr} />
-        <Button title={"수업 예약"} />
+        <Button title={"수업 예약"} onClick={() =>navigate('/reservation')} />
       </>
   );
 }

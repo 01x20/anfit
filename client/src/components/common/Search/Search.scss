@@ -1,0 +1,15 @@
+.search-wrap {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+
+    .btn-search {
+        background: var(--primary-color);
+        color: var(--color-white);
+        height: 3.5rem;
+        line-height: 3.5rem;
+        width: 6.5rem;
+        text-align: center;
+        border-radius: 0.6rem;
+    }
+}

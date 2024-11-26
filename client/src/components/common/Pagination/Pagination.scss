@@ -1,0 +1,26 @@
+.pager-wrap {
+    margin-top: 3rem;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            color: var(--text-gray);
+
+            &.btn-pager {
+                width: 1.4rem;
+                height: 1.4rem;
+                background: url('../../../assets/images/icon-cal-arrow.png') 0 0 no-repeat;
+                background-size: auto 1.4rem;
+                margin-right: 0.8rem;
+
+                &.next {
+                    background-position-x: -1.4rem;
+                    margin-right: 0;
+                    margin-left: 0.8rem;
+                }
+            }
+        }
+    }
+}

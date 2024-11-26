@@ -12,12 +12,25 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.calendar-wrap .cal-header .left-box {
+.calendar-wrap .cal-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.calendar-wrap .cal-header .col {
+  margin: 0 1rem;
+}
+.calendar-wrap .cal-header .cal-btn {
+  width: 1.3rem;
+  height: 1.3rem;
+  background: url("../../../assets/images/icon-cal-arrow.png") 0 0 no-repeat;
+  background-size: auto 1.3rem;
+}
+.calendar-wrap .cal-header .cal-btn.next {
+  background-position-x: -1.3rem;
 }
 .calendar-wrap .cal-days {
   display: flex;
