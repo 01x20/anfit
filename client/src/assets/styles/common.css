@@ -51,6 +51,7 @@ button {
 }
 button, input, select {
     vertical-align: middle;
+    outline: none;
 }
 select::-ms-expand{
     display:none;
@@ -70,12 +71,14 @@ address,em {
 a {
     text-decoration: none;
     color: var(--text-color);
+    outline: none;
 }
 iframe {
     overflow: hidden;
     margin: 0;
     padding: 0;
     border: 0;
+    outline: none;
 }
 table {
     border-collapse: collapse;
@@ -311,6 +314,7 @@ select.int {
     background: var(--color-white) url('../images/icon-select-arrow.png') right 1rem center no-repeat;
     background-size: 1.2rem;
     padding: 0 3rem 0 1rem;
+    color: var(--text-color);
 }
 
 ::placeholder {

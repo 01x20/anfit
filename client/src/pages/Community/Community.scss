@@ -1,4 +1,14 @@
 .community-wrap {
+    .search-wrap {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        .src-ipt {
+            width: calc(100% - 14.6rem);
+
+            input {width: 100%;}
+        }
+    }
     .board-wrap {
         border: 0.1rem solid var(--border-color);
         border-radius: 0.8rem;
