@@ -1,0 +1,12 @@
+.todo-box {
+  padding: 1rem;
+  border: 0.1rem dashed var(--gray-300);
+  border-radius: 0.8rem;
+  margin-bottom: 2rem;
+}
+.todo-box .check-box {
+  margin-bottom: 1rem;
+}
+.todo-box .check-box:last-child {
+  margin-bottom: 0;
+}/*# sourceMappingURL=TodoList.css.map */

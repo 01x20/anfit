@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+import Axios from 'axios';
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 import Search from '../../components/common/Search/Search';
@@ -16,50 +17,36 @@ function Community() {
     window.scrollTo(0, 0);
   }, [page]);
 
-  const items = [
-    {
-      notice: true,
-      postName : "공지 제목입니다",
-      postDate : "2024. 11. 01 13:39:05",
-      postComment : "",
-      postContent: "내용이 들어가지요",
-    },
-    {
-      notice: false,
-      postName : "안핏(安fit) 근처 맛집 있을까요?",
-      postDate : "2024. 11. 01 13:39:05",
-      postComment : "35",
-      postContent: "내용",
-    },
-    {
-      notice: false,
-      postName : "안핏(安fit) 근처 맛집 있을까요? 안핏(安fit) 근처 맛집 있을까요?",
-      postDate : "2024. 11. 01 13:39:05",
-      postComment : "35",
-      postContent: "내용 내용",
-    },
-    {
-      notice: false,
-      postName : "안핏(安fit) 근처 맛집 있을까요? 안핏(安fit) 근처 맛집 있을까요?",
-      postDate : "2024. 11. 01 13:39:05",
-      postComment : "35",
-      postContent: "내용~~~~~~~~",
-    },
-    {
-      notice: false,
-      postName : "안핏(安fit) 근처 맛집 있을까요? 안핏(安fit) 근처 맛집 있을까요?",
-      postDate : "2024. 11. 01 13:39:05",
-      postComment : "35",
-      postContent: "내용!!!!!!!",
-    },
-  ];
+  const RenderList = () => {
+    const [items, setItems] = useState([]); // API 데이터 저장
+    const [loading, setLoading] = useState(true); // 로딩 상태
+    const [error, setError] = useState(null); // 에러 상태
+    const [detailItems, setDetailItems] = useState([]); // 상세 데이터
+    const navigate = useNavigate();
 
-  const RenderList = ({items}) => {
-    const [detailItems, setDetailItems] = useState([]);
+    // API 호출
+    useEffect(() => {
+      Axios.get(`http://localhost:4000/posts`)
+        .then((res) => {
+          setItems(res.data);
+        })
+        .catch((err) => {
+          console.error('에러 발생: ', err);
+          setError(err);
+        })
+        .finally(() => {
+          setLoading(false);
+      });
+    }, []);
+    
     const LinkToPostDetail = (data) => {
       setDetailItems(data);
       navigate('detail', { state: data });
     }
+
+    if (loading) return <div>로딩 중...</div>;
+
+    if (error) return <div>에러 발생</div>;
 
     return (
       <div className="board-wrap">
@@ -85,7 +72,7 @@ function Community() {
       <div className="community-wrap">
         <div className="box-title">커뮤니티</div>
         <Search />
-        <RenderList items={items} />
+        <RenderList />
         {/*<Pagination
           totalItems={10}
           currentPage={page && parseInt(page) > 0 ? parseInt(page) : 1}

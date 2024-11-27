@@ -91,19 +91,6 @@
     }
 }
 
-.todo-box {
-    padding: 1rem;
-    border: 0.1rem dashed var(--gray-300);
-    border-radius: 0.8rem;
-    margin-bottom: 2rem;
-
-    .check-box {
-        margin-bottom: 1rem;
-
-        &:last-child {margin-bottom: 0;}
-    }
-}
-
 .info-slide {
     margin-bottom: 2rem;
 

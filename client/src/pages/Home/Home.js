@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
+import RenderTodoList from '../../components/common/TodoList/TodoList';
 
 const RenderNoticeSlide = ({items}) => {
   const navigate = useNavigate();
@@ -206,22 +207,7 @@ function Home() {
       </div>
 
       <div className="box-title">오늘의 목표</div>
-      <div className="todo-box">
-        <div className="check-box">
-          <label htmlFor="Chk01" className="label">
-            <input type="checkbox" id="Chk01" name="todoList" />
-            <div className="inp"></div>
-            <div className="text">해야 할 일 1</div>
-          </label>
-        </div>
-        <div className="check-box">
-          <label htmlFor="Chk02" className="label">
-            <input type="checkbox" id="Chk02" name="todoList" />
-            <div className="inp"></div>
-            <div className="text">해야 할 일 2</div>
-          </label>
-        </div>
-      </div>
+      <RenderTodoList />
 
       <div className="box-title">나의 수강권</div>
       <RenderPassSlide items={classPassList} />

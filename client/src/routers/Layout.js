@@ -14,7 +14,7 @@ const Layout = (prop) => {
     <div>
         <Header />
         <main className={
-          location.pathname === '/' && '/anfit' ? 'contents-wrap main' : 'contents-wrap'
+          ['/', '/anfit'].includes(location.pathname) ? 'contents-wrap main' : 'contents-wrap'
           }>
             {prop.children}
         </main>

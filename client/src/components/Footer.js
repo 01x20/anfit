@@ -7,7 +7,7 @@ const Footer = () => {
   const homePaths = ['/', '/anfit-info'];
   const classPaths = ['/class-pass'];
   const reservPaths = ['/reservation'];
-  const commuPaths = ['/community'];
+  const commuPaths = ['/community','/community/detail', '/community/write'];
   const mypagePaths = ['/mypage'];
 
   return (

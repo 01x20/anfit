@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "notice": false,
+      "postName": "안핏(安fit) 근처 맛집 있을까요?",
+      "postDate": "2024. 11. 01",
+      "postComment": "35",
+      "postContent": "내용이 들어갑니다",
+      "comments" : [
+        {
+            "date": "2024. 11. 27 15:43:5",
+            "contents": "댓글 내용 1",
+            "id": "1"
+        }
+      ]
+    },
+    {
+      "postName": "안녕하세요? 테스트 게시글 작성입니다",
+      "postContent": "<p>내용 내용</p><p>내용 </p><p>내</p><p>용</p>",
+      "postDate": "2024. 11. 27 15:43:5",
+      "id": "9VvK4Ll",
+      "comments" : [
+        {
+            "date": "2024. 11. 27 15:43:5",
+            "contents": "댓글 내용 1",
+            "id": "2"
+        }
+      ]
+    }
+  ],
+  "test": [
+    {
+      "date": "2024. 11. 27 15:43:5",
+      "contents": "댓글 내용 1",
+      "id": "1"
+    },
+    {
+      "date": "2024. 11. 27 16:19:35",
+      "contents": "ddd",
+      "id": "coBOfeW"
+    }
+  ]
+}
