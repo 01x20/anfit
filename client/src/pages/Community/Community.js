@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 import Search from '../../components/common/Search/Search';
@@ -8,7 +8,7 @@ import Pagination from '../../components/common/Pagination/Pagination';
 function Community() {
   const navigate = useNavigate();
   
-  const [totalItems, setTotalItems] = useState(0);
+  //const [totalItems, setTotalItems] = useState(0);
   const [searchParams] = useSearchParams();
   const page = searchParams.get("page");
   

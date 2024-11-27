@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function Pagination({ totalItems, itemCountPerPage, pageCount, currentPage }) {
     const totalPages = Math.ceil(totalItems / itemCountPerPage);
     const [start, setStart] = useState(1);
-    const noPrev = start === 1;
-    const noNext = start + pageCount - 1 >= totalPages;
+    //const noPrev = start === 1;
+    //const noNext = start + pageCount - 1 >= totalPages;
 
   useEffect(() => {
     import('./Pagination.css');

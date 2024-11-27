@@ -5,6 +5,46 @@ import { Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 
+const RenderNoticeSlide = ({items}) => {
+  const navigate = useNavigate();
+  const swiperRef = useRef(null);
+
+  const handleSwiperInit = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.update();
+    }
+  };
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.update();
+    }
+  }, [items]);
+
+  return (
+  <>
+    <Swiper
+      modules={[Autoplay]}
+      direction={'vertical'}
+      loop={true}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false
+      }}
+      className="notice-slide"
+      onInit={handleSwiperInit}>
+      {items.map((item, index) => (
+        <SwiperSlide onClick={() => navigate('/community/detail')} key={index}>
+          <div className="slide-inner">
+            <div className="title dot">{item.title}</div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </>
+  );
+};
+
 const RenderPassSlide = ({items}) => {
   const navigate = useNavigate();
   const swiperRef = useRef(null);
@@ -95,6 +135,13 @@ function Home() {
     import('./Home.css');
   }, []);
 
+  const noticeList = [
+    {title : "안핏 수강료 안내 1"},
+    {title : "안핏 수강료 안내 2"},
+    {title : "안핏 수강료 안내 3"},
+    {title : "안핏 수강료 안내 4"},
+  ];
+
   const classPassList = [
     {
       state: true,
@@ -149,26 +196,7 @@ function Home() {
 
   return (
     <>
-      <Swiper
-      modules={[Autoplay]}
-      direction={'vertical'}
-      loop={true}
-      autoplay={{
-        delay: 50000,
-        disableOnInteraction: false
-      }}
-      className="notice-slide">
-        <SwiperSlide>
-        <div className="slide-inner">
-            <div className="title dot">안핏(安fit) 수강료 안내 안핏(安fit) 수강료 안내 안핏(安fit) 수강료 안내</div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-inner">
-            <div className="title dot">안핏(安fit) 수강료 안내 2</div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+      <RenderNoticeSlide items={noticeList}/>
 
       <div className="quick-icon-list">
         <Link to="/" className="btn-quick btn0">습관 만들기</Link>
