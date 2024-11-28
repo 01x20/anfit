@@ -30,7 +30,19 @@
         margin-bottom: 1rem;
     }
     .comment-ipt {
-        input {width: 100%; background: var(--color-white);}
+        display: flex;
+        gap: 0.8rem;
+        input {
+            width: 100%; 
+            background: var(--color-white);
+        }
+        .btn-submit {
+            width: 6.8rem;
+            text-align: center;
+            background: var(--primary-color);
+            color: var(--color-white);
+            border-radius: 0.6rem;
+        }
     }
     .comments-box {
         padding: 2rem 0;

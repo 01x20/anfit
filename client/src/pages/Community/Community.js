@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from "react";
 import Axios from 'axios';
+import {API_URL} from '../../Config';
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 import Search from '../../components/common/Search/Search';
@@ -26,7 +27,7 @@ function Community() {
 
     // API 호출
     useEffect(() => {
-      Axios.get(`http://localhost:4000/posts`)
+      Axios.get(`${API_URL}/posts`)
         .then((res) => {
           setItems(res.data);
         })

@@ -24,9 +24,20 @@
   font-size: 1.6rem;
   margin-bottom: 1rem;
 }
+.comments-wrap .comment-ipt {
+  display: flex;
+  gap: 0.8rem;
+}
 .comments-wrap .comment-ipt input {
   width: 100%;
   background: var(--color-white);
+}
+.comments-wrap .comment-ipt .btn-submit {
+  width: 6.8rem;
+  text-align: center;
+  background: var(--primary-color);
+  color: var(--color-white);
+  border-radius: 0.6rem;
 }
 .comments-wrap .comments-box {
   padding: 2rem 0;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import {API_URL} from '../../../Config';
 import { useNavigate } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -47,7 +48,7 @@ const CommunityWrite = () => {
             postDate: formattedDate,
         }
         if(params.postName && params.postContent) {
-            Axios.post(`http://localhost:4000/posts`, params)
+            Axios.post(`${API_URL}/posts`, params)
             .then((res) => {
                 navigate('/community');
             })
