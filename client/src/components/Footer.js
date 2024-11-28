@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Footer = () => {
   const location = useLocation();
 
-  const homePaths = ['/', '/anfit-info'];
+  const homePaths = ['/', '/anfit-info', '/anfit'];
   const classPaths = ['/class-pass'];
   const reservPaths = ['/reservation'];
   const commuPaths = ['/community','/community/detail', '/community/write'];

@@ -39,9 +39,9 @@ function Community() {
       });
     }, []);
     
-    const LinkToPostDetail = (data) => {
-      setDetailItems(data);
-      navigate('detail', { state: data });
+    const LinkToPostDetail = (item) => {
+      setDetailItems(item);
+      navigate(`detail?id=${item.id}`);
     }
 
     if (loading) return <div>로딩 중...</div>;
