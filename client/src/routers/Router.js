@@ -23,6 +23,7 @@ const Router = () => {
                     <Route path="/community" element={<Community />} />
                     <Route path="/community/detail" element={<CommunityDetail />} />
                     <Route path="/community/write" element={<CommunityWrite />} />
+                    <Route path="/community/edit" element={<CommunityWrite />} />
                     <Route path="/mypage" element={<Mypage />} />
                     <Route path="/anfit-info" element={<AnfitInfo />} />
                 </Routes>

@@ -1,22 +1,21 @@
 import React, { useState,useEffect } from "react";
 import Axios from 'axios';
 import {API_URL} from '../../Config';
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Search from '../../components/common/Search/Search';
 //import Pagination from '../../components/common/Pagination/Pagination';
 
-function Community() {
+const Community = () => {
   const navigate = useNavigate();
   
   //const [totalItems, setTotalItems] = useState(0);
-  const [searchParams] = useSearchParams();
-  const page = searchParams.get("page");
+  //const [searchParams] = useSearchParams();
+  //const page = searchParams.get("page");
   
   useEffect(() => {
     import('./Community.css');
-    window.scrollTo(0, 0);
-  }, [page]);
+  }, []);
 
   const RenderList = () => {
     const [items, setItems] = useState([]); // API 데이터 저장
@@ -29,6 +28,7 @@ function Community() {
     useEffect(() => {
       Axios.get(`${API_URL}/posts`)
         .then((res) => {
+          console.log(res.data)
           setItems(res.data);
         })
         .catch((err) => {
