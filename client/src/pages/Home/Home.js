@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Axios from 'axios';
+import {API_URL} from '../../Config';
 import { Link, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -6,9 +8,10 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import RenderTodoList from '../../components/common/TodoList/TodoList';
 
-const RenderNoticeSlide = ({items}) => {
+const RenderNoticeSlide = () => {
   const navigate = useNavigate();
   const swiperRef = useRef(null);
+  const [noticeItems, setNoticeItems] = useState([]);
 
   const handleSwiperInit = () => {
     if (swiperRef.current) {
@@ -20,29 +23,38 @@ const RenderNoticeSlide = ({items}) => {
     if (swiperRef.current) {
       swiperRef.current.swiper.update();
     }
-  }, [items]);
+
+    Axios.get(`${API_URL}/posts`)
+    .then(res => {
+      const filteredNotices = res.data.filter((item) => item.notice === true);
+      setNoticeItems(filteredNotices);
+    })
+    .catch((err) => {
+      console.error('에러 발생: ', err);
+    })
+  }, [noticeItems]);
 
   return (
-  <>
-    <Swiper
-      modules={[Autoplay]}
-      direction={'vertical'}
-      loop={true}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false
-      }}
-      className="notice-slide"
-      onInit={handleSwiperInit}>
-      {items.map((item, index) => (
-        <SwiperSlide onClick={() => navigate('/community/detail')} key={index}>
-          <div className="slide-inner">
-            <div className="title dot">{item.title}</div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </>
+    <>
+      <Swiper
+        modules={[Autoplay]}
+        direction={'vertical'}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false
+        }}
+        className="notice-slide"
+        onInit={handleSwiperInit}>
+        {noticeItems.map((item, index) => (
+          <SwiperSlide onClick={() => navigate(`/community/detail?id=${item.id}`)} key={index}>
+            <div className="slide-inner">
+              <div className="title dot">{item.title}</div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 };
 
@@ -136,13 +148,6 @@ function Home() {
     import('./Home.css');
   }, []);
 
-  const noticeList = [
-    {title : "안핏 수강료 안내 1"},
-    {title : "안핏 수강료 안내 2"},
-    {title : "안핏 수강료 안내 3"},
-    {title : "안핏 수강료 안내 4"},
-  ];
-
   const classPassList = [
     {
       state: true,
@@ -197,7 +202,7 @@ function Home() {
 
   return (
     <>
-      <RenderNoticeSlide items={noticeList}/>
+      <RenderNoticeSlide />
 
       <div className="quick-icon-list">
         <Link to="/" className="btn-quick btn0">습관 만들기</Link>
