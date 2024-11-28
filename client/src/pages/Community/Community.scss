@@ -44,6 +44,24 @@
             margin-top: 0.4rem;
             font-size: 1.2rem;
             color: var(--text-gray);
+
+            .comment {
+                margin-left: 0.5rem;
+                position: relative;
+                padding-left: 1.4rem;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    background: url('../../assets/images/icon-comment.png') 50% 50%;
+                    background-size: 100%;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
         }
     }
 

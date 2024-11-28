@@ -81,12 +81,10 @@
         }
     }
     .toggle-wrap {
-        height: 0;
-        opacity: 0;
+        display: none;
 
         &.show {
-            opacity: 1;
-            height: auto;
+            display: block;
         }
     }
     .comments-reply-wrap {

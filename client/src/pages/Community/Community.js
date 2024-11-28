@@ -28,8 +28,8 @@ const Community = () => {
     useEffect(() => {
       Axios.get(`${API_URL}/posts`)
         .then((res) => {
-          console.log(res.data)
           setItems(res.data);
+          console.log(res.data)
         })
         .catch((err) => {
           console.error('에러 발생: ', err);
@@ -38,6 +38,7 @@ const Community = () => {
         .finally(() => {
           setLoading(false);
       });
+      
     }, []);
     
     const LinkToPostDetail = (item) => {
@@ -45,13 +46,24 @@ const Community = () => {
       navigate(`detail?id=${item.id}`);
     }
 
+    const calculateTotalComments = (comment) => {
+      const replyCount = comment.replies ? comment.replies.length : 0; // 대댓글 개수
+      return 1 + replyCount; // 본 댓글(1) + 대댓글 개수
+    };
+
     if (loading) return <div>로딩 중...</div>;
 
     if (error) return <div>에러 발생</div>;
 
     return (
       <div className="board-wrap">
-        {items.map((item, index) => (
+        {items.map((item, index) => {
+          // 게시물의 모든 댓글과 대댓글 개수를 계산
+          const totalComments = item.comments
+          ? item.comments.reduce((total, comment) => total + calculateTotalComments(comment), 0)
+          : 0;
+
+          return (
           <div key={index} className="list-wrap" onClick={() => {LinkToPostDetail(item)}}>
             <div className="list-top">
               {item.notice ? (<><span className="label-box blue">공지</span></>) : null}
@@ -61,10 +73,11 @@ const Community = () => {
             </div>
             <div className="list-bottom">
               <div className="date">{item.postDate}</div>
-              {item.postComment > 0 && item.postComment !== null ? (<><div className="comment">{item.postComment}</div></>) : null}
+              <div className="comment">{totalComments}</div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     );
   }

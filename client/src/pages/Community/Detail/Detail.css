@@ -71,12 +71,10 @@
   font-size: 1.2rem;
 }
 .comments-wrap .toggle-wrap {
-  height: 0;
-  opacity: 0;
+  display: none;
 }
 .comments-wrap .toggle-wrap.show {
-  opacity: 1;
-  height: auto;
+  display: block;
 }
 .comments-wrap .comments-reply-wrap {
   text-align: center;
