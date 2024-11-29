@@ -98,7 +98,7 @@
   "ClassPassInfo" : [
     {
       "id" : "1",
-      "name" : "[텀블벅 전용] 비기너 패키지 PT",
+      "passName" : "[텀블벅 전용] 비기너 패키지 PT",
       "totalCount" : "2",
       "types" : [
         {
@@ -111,7 +111,7 @@
     },
     {
       "id" : "2",
-      "name" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
+      "passName" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
       "totalCount" : "3",
       "types" : [
         {
@@ -130,11 +130,11 @@
         {
           "id" : "1",
           "state" : true,
-          "name" : "[텀블벅 전용] 비기너 패키지 PT",
+          "passName" : "[텀블벅 전용] 비기너 패키지 PT",
           "totalCount" : "2",
-          "useCount" : "",
-          "cancelCount" : "",
-          "noShowCount" : "",
+          "useCount" : "1",
+          "cancelCount" : "0",
+          "noShowCount" : "0",
           "types" : [
             {
               "member" : "1:1",
@@ -148,11 +148,11 @@
         {
           "id" : "2",
           "state" : false,
-          "name" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
+          "passName" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
           "totalCount" : "3",
-          "useCount" : "",
-          "cancelCount" : "",
-          "noShowCount" : "",
+          "useCount" : "0",
+          "cancelCount" : "0",
+          "noShowCount" : "0",
           "types" : [
             {
               "member" : "4:1",

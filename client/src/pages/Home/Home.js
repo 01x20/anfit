@@ -121,7 +121,7 @@ const RenderPassSlide = () => {
                     </React.Fragment>
                   ))
                 }
-                <div className="pass-name">{item.name} {item.totalCount}회</div>
+                <div className="pass-name">{item.passName} {item.totalCount}회</div>
               </div>
               <div className="info-bottom">
                 <p className="date">{item.limitDate}</p>
