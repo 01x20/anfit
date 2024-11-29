@@ -121,7 +121,13 @@ table {
     position: relative;
 }
 .box-title .read-more {
+    display: block;
+    position: relative;
+}
+
+.box-title .read-more::before {
     position: absolute;
+    content: '';
     width: 1rem;
     height: 1rem;
     right: 0;

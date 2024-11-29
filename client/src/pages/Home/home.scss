@@ -2,17 +2,17 @@
 
 .contents-wrap.main {
     position: relative;
+    background: linear-gradient(180deg,#EDF0F4, #73B3E6);
+    padding: 5rem 0 6rem;
 
-    &::before {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 16rem;
-        background: var(--border-color);
-        border-bottom-left-radius: 4rem;
-        left: 0;
-        top: 0;
-        z-index: -1;
+    .main-inner-box {
+        position: relative;
+        z-index: 1;
+        background: var(--color-white);
+        padding: 5rem 1.6rem 8rem;
+        border-top-left-radius: 4rem;
+        border-top-right-radius: 4rem;
+        height: calc(100vh - 11rem);
     }
 }
 
@@ -22,7 +22,8 @@
     background: var(--color-white);
     border-radius: 100rem;
     padding: 0 1.5rem;
-    margin: 1rem 0 2rem;
+    margin: 1rem auto 2rem;
+    width: calc(100% - 3.2rem);
 
     .slide-inner {
         display: flex;

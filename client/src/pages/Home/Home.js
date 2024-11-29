@@ -32,35 +32,42 @@ const RenderNoticeSlide = () => {
     .catch((err) => {
       console.error('에러 발생: ', err);
     })
-  }, [noticeItems]);
+  }, []);
+
 
   return (
-    <>
-      <Swiper
-        modules={[Autoplay]}
-        direction={'vertical'}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false
-        }}
-        className="notice-slide"
-        onInit={handleSwiperInit}>
-        {noticeItems.map((item, index) => (
-          <SwiperSlide onClick={() => navigate(`/community/detail?id=${item.id}`)} key={index}>
-            <div className="slide-inner">
-              <div className="title dot">{item.title}</div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
+    <Swiper
+      ref={swiperRef}
+      modules={[Autoplay]}
+      direction={"vertical"}
+      loop={noticeItems.length > 1}
+      autoplay={
+        noticeItems.length > 1
+          ? {
+              delay: 5000,
+              disableOnInteraction: false,
+            }
+          : false
+      }
+      className="notice-slide"
+      onInit={handleSwiperInit}
+    >
+      {noticeItems.map((item) => (
+        <SwiperSlide key={item.id} onClick={() => navigate(`/community/detail?id=${item.id}`)}>
+          <div className="slide-inner">
+            <div className="title dot">{item.postName}</div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
-const RenderPassSlide = ({items}) => {
+const RenderPassSlide = () => {
   const navigate = useNavigate();
   const swiperRef = useRef(null);
+  const myId = "1";
+  const [userPassInfo, setUserPassInfo] = useState([]);
 
   const handleSwiperInit = () => {
     if (swiperRef.current) {
@@ -68,47 +75,64 @@ const RenderPassSlide = ({items}) => {
     }
   };
 
+  const linkToPassDetail = (item) => {
+    navigate(`/class-pass?passId=${item.id}`);
+  }
+
   useEffect(() => {
     if (swiperRef.current) {
       swiperRef.current.swiper.update();
     }
-  }, [items]);
+
+    Axios.get(`${API_URL}/userClassPassInfo`)
+    .then((res) => {
+      const userData = res.data.find((user) => user.usrId === myId);
+      if(userData && Array.isArray(userData.info)) {
+        setUserPassInfo(userData.info);
+      } else {
+        console.log("데이터 조회 실패");
+      }
+    })
+  }, []);
 
   return (
-  <>
-  <Swiper
-    slidesPerView={'auto'}
-    ref={swiperRef}
-    observer={true}
-    observeParents={true}
-    className="info-slide"
-    onInit={handleSwiperInit}>
-      {items.map((item, index) => (
-        <SwiperSlide onClick={() => navigate('/class-pass')} key={item.passName + index}>
-          <div className="common-info-box">
-            <div className="info-top">
-              {item.state ?
-                (<p className="label-box blue">사용 중</p>) :
-                (<p className="label-box gray">사용 중지</p>)
-              }
-              {item.types.map((type, typeIndex) => (
-                <React.Fragment key={typeIndex}>
-                  <p className="detail">{type.group}</p>
-                  <p className="detail">{type.membership}</p>
-                </React.Fragment>
-              ))}
-              <div className="pass-name">{item.passName}</div>
+    <>
+    <div className="box-title">나의 수강권</div>
+    <Swiper
+      slidesPerView={'auto'}
+      ref={swiperRef}
+      observer={true}
+      observeParents={true}
+      className="info-slide"
+      onInit={handleSwiperInit}>
+        {userPassInfo.map((item, index) => (
+          <SwiperSlide onClick={() => linkToPassDetail(item)} key={index}>
+            <div className="common-info-box">
+              <div className="info-top">
+                {item.state ?
+                  (<p className="label-box blue">사용 중</p>) :
+                  (<p className="label-box gray">사용 중지</p>)
+                }
+                {item.types && Array.isArray(item.types) &&
+                  item.types.map((type, typeIndex) => (
+                    <React.Fragment key={typeIndex}>
+                    <p className="detail">{type.member} {type.type}</p>
+                    <p className="detail">{type.membership}</p>
+                    </React.Fragment>
+                  ))
+                }
+                <div className="pass-name">{item.name} {item.totalCount}회</div>
+              </div>
+              <div className="info-bottom">
+                <p className="date">{item.limitDate}</p>
+                <p className="num">잔여 <strong>{item.totalCount || 0}</strong>회</p>
+              </div>
             </div>
-            <div className="info-bottom">
-              <p className="date">{item.passLimit}</p>
-              <p className="num">잔여 <strong>{item.passCount}</strong>회</p>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </>
-  );
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
+    );
 };
 
 const RenderResList = ({lists}) => {
@@ -148,33 +172,6 @@ function Home() {
     import('./Home.css');
   }, []);
 
-  const classPassList = [
-    {
-      state: true,
-      types: [
-        {
-          group : "1:1PT",
-          membership: "횟수제",
-        }
-      ],
-      passName : "[텀블벅 전용] 비기너 패키지 PT 2회",
-      passLimit : "2024. 11. 11 ~ 2024. 12. 10",
-      passCount : "2",
-    },
-    {
-      state: false,
-      types: [
-        {
-          group : "1:1PT",
-          membership: "횟수제",
-        }
-      ],
-      passName : "[텀블벅 전용] 비기너 패키지 PT 2회",
-      passLimit : "2024. 11. 11 ~ 2024. 12. 10",
-      passCount : "2",
-    }
-  ];
-
   const resList = [
     {
       labels: [
@@ -203,25 +200,26 @@ function Home() {
   return (
     <>
       <RenderNoticeSlide />
+      <div className="main-inner-box">
+        <div className="quick-icon-list">
+          <Link to="/" className="btn-quick btn0">습관 만들기</Link>
+          <Link to="/anfit-info" className="btn-quick btn1">안핏 안내</Link>
+          <Link to="/class-pass" className="btn-quick btn2">수강권 정보</Link>
+          <Link to="/" className="btn-quick btn3">예약하기</Link>
+        </div>
 
-      <div className="quick-icon-list">
-        <Link to="/" className="btn-quick btn0">습관 만들기</Link>
-        <Link to="/anfit-info" className="btn-quick btn1">안핏 안내</Link>
-        <Link to="/class-pass" className="btn-quick btn2">수강권 정보</Link>
-        <Link to="/" className="btn-quick btn3">예약하기</Link>
-      </div>
+        <div className="box-title">오늘의 목표</div>
+        <RenderTodoList />
 
-      <div className="box-title">오늘의 목표</div>
-      <RenderTodoList />
+        <RenderPassSlide />
 
-      <div className="box-title">나의 수강권</div>
-      <RenderPassSlide items={classPassList} />
-
-      <div className="box-title">
-        예약한 수업
-        <Link to="/" className="read-more"></Link>
-      </div>
-      <RenderResList lists={resList} />
+        <div className="box-title">
+          <Link to="/" className="read-more">
+            예약한 수업
+          </Link>
+        </div>
+        <RenderResList lists={resList} />
+    </div>
     </>
   );
 }

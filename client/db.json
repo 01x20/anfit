@@ -84,5 +84,86 @@
         }
       ]
     }
+  ],
+  "userInfo" : [
+    {
+      "id" : "1",
+      "name" : "김가을"
+    },
+    {
+      "id" : "2",
+      "name" : "한다솜"
+    }
+  ],
+  "ClassPassInfo" : [
+    {
+      "id" : "1",
+      "name" : "[텀블벅 전용] 비기너 패키지 PT",
+      "totalCount" : "2",
+      "types" : [
+        {
+          "member" : "1:1",
+          "type" : "PT",
+          "membership" : "횟수제"
+        }
+      ],
+      "coachInfo" : "빙수 코치"
+    },
+    {
+      "id" : "2",
+      "name" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
+      "totalCount" : "3",
+      "types" : [
+        {
+          "member" : "1:1",
+          "type" : "Group",
+          "membership" : "횟수제"
+        }
+      ],
+      "coachInfo" : "안핏 코치"
+    }
+  ],
+  "userClassPassInfo" : [
+    {
+      "usrId" : "1",
+      "info" : [
+        {
+          "id" : "1",
+          "state" : true,
+          "name" : "[텀블벅 전용] 비기너 패키지 PT",
+          "totalCount" : "2",
+          "useCount" : "",
+          "cancelCount" : "",
+          "noShowCount" : "",
+          "types" : [
+            {
+              "member" : "1:1",
+              "type" : "PT",
+              "membership" : "횟수제"
+            }
+          ],
+          "limitDate" : "2024. 11. 11 ~ 2024. 12. 10",
+          "coachInfo" : "빙수 코치"
+        },
+        {
+          "id" : "2",
+          "state" : false,
+          "name" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
+          "totalCount" : "3",
+          "useCount" : "",
+          "cancelCount" : "",
+          "noShowCount" : "",
+          "types" : [
+            {
+              "member" : "4:1",
+              "type" : "Group",
+              "membership" : "횟수제"
+            }
+          ],
+          "limitDate" : "2024. 11. 11 ~ 2024. 12. 10",
+          "coachInfo" : "안핏 코치"
+        }
+      ]
+    }
   ]
 }

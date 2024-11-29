@@ -21,7 +21,6 @@ const Community = () => {
     const [items, setItems] = useState([]); // API 데이터 저장
     const [loading, setLoading] = useState(true); // 로딩 상태
     const [error, setError] = useState(null); // 에러 상태
-    const [detailItems, setDetailItems] = useState([]); // 상세 데이터
     const navigate = useNavigate();
 
     // API 호출
@@ -42,7 +41,6 @@ const Community = () => {
     }, []);
     
     const LinkToPostDetail = (item) => {
-      setDetailItems(item);
       navigate(`detail?id=${item.id}`);
     }
 
