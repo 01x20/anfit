@@ -8,6 +8,18 @@
       "postContent": "내용이 들어갑니다",
       "comments": [
         {
+          "id": "1732869132248",
+          "date": "2024. 11. 29 17:32:12",
+          "contents": "안녕하시렵니까",
+          "replies": [
+            {
+              "id": "1732869147421",
+              "date": "2024. 11. 29 17:32:27",
+              "contents": "댓글 작성!!!!!!"
+            }
+          ]
+        },
+        {
           "id": "1732786786365",
           "date": "2024. 11. 28 18:39:46",
           "contents": "댓글!!!~!~@@$@#",
@@ -83,85 +95,92 @@
           "id": "2"
         }
       ]
-    }
-  ],
-  "userInfo" : [
-    {
-      "id" : "1",
-      "name" : "김가을"
     },
     {
-      "id" : "2",
-      "name" : "한다솜"
+      "notice": false,
+      "postName": "게시글 작성을 해 봐요",
+      "postContent": "<p>다솜 대리님 바보</p><p>ㅋㅋ</p>",
+      "postDate": "2024. 11. 29 17:32:59",
+      "id": "5pSaAus"
     }
   ],
-  "ClassPassInfo" : [
+  "userInfo": [
     {
-      "id" : "1",
-      "passName" : "[텀블벅 전용] 비기너 패키지 PT",
-      "totalCount" : "2",
-      "types" : [
-        {
-          "member" : "1:1",
-          "type" : "PT",
-          "membership" : "횟수제"
-        }
-      ],
-      "coachInfo" : "빙수 코치"
+      "id": "1",
+      "name": "김가을"
     },
     {
-      "id" : "2",
-      "passName" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
-      "totalCount" : "3",
-      "types" : [
-        {
-          "member" : "1:1",
-          "type" : "Group",
-          "membership" : "횟수제"
-        }
-      ],
-      "coachInfo" : "안핏 코치"
+      "id": "2",
+      "name": "한다솜"
     }
   ],
-  "userClassPassInfo" : [
+  "ClassPassInfo": [
     {
-      "usrId" : "1",
-      "info" : [
+      "id": "1",
+      "passName": "[텀블벅 전용] 비기너 패키지 PT",
+      "totalCount": "2",
+      "types": [
         {
-          "id" : "1",
-          "state" : true,
-          "passName" : "[텀블벅 전용] 비기너 패키지 PT",
-          "totalCount" : "2",
-          "useCount" : "1",
-          "cancelCount" : "0",
-          "noShowCount" : "0",
-          "types" : [
+          "member": "1:1",
+          "type": "PT",
+          "membership": "횟수제"
+        }
+      ],
+      "coachInfo": "빙수 코치"
+    },
+    {
+      "id": "2",
+      "passName": "[텀블벅 전용] 비기너 패키지 그룹 수업",
+      "totalCount": "3",
+      "types": [
+        {
+          "member": "1:1",
+          "type": "Group",
+          "membership": "횟수제"
+        }
+      ],
+      "coachInfo": "안핏 코치"
+    }
+  ],
+  "userClassPassInfo": [
+    {
+      "usrId": "1",
+      "info": [
+        {
+          "id": "1",
+          "state": true,
+          "passName": "[텀블벅 전용] 비기너 패키지 PT",
+          "totalCount": "2",
+          "useCount": "1",
+          "cancelCount": "0",
+          "noShowCount": "0",
+          "types": [
             {
-              "member" : "1:1",
-              "type" : "PT",
-              "membership" : "횟수제"
+              "member": "1:1",
+              "type": "PT",
+              "membership": "횟수제"
             }
           ],
-          "limitDate" : "2024. 11. 11 ~ 2024. 12. 10",
-          "coachInfo" : "빙수 코치"
+          "limitDate": "2024. 11. 11 ~ 2024. 12. 10",
+          "coachInfo": "빙수 코치"
         },
         {
-          "id" : "2",
-          "state" : false,
-          "passName" : "[텀블벅 전용] 비기너 패키지 그룹 수업",
-          "totalCount" : "3",
-          "useCount" : "0",
-          "cancelCount" : "0",
-          "noShowCount" : "0",
-          "types" : [
+          "id": "2",
+          "state": false,
+          "passName": "[텀블벅 전용] 비기너 패키지 그룹 수업",
+          "totalCount": "3",
+          "useCount": "0",
+          "cancelCount": "0",
+          "noShowCount": "0",
+          "types": [
             {
-              "member" : "4:1",
-              "type" : "Group",
-              "membership" : "횟수제"
+              "member": "4:1",
+              "type": "Group",
+              "membership": "횟수제"
             }
           ],
-          "limitDate" : "2024. 11. 11 ~ 2024. 12. 10",
-          "coachInfo" : "안핏 코치"
+          "limitDate": "2024. 11. 11 ~ 2024. 12. 10",
+          "coachInfo": "안핏 코치"
         }
       ]
     }

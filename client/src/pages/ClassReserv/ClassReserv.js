@@ -1,5 +1,6 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Axios from 'axios';
+import {API_URL} from '../../Config';
 
 import ClassPassTop from "../../components/common/ClassPassTop/ClassPassTop";
 import Tab from '../../components/common/Tab/Tab';
@@ -8,10 +9,23 @@ import AbleReservation from './AbleReservation';
 import AbleGroupReservation from './AbleGroupReservation';
 
 function ClassReserv() {
+  const myId = "1";
+  const [userPassInfo, setUserPassInfo] = useState([]);
   const type = 'group';
   
   useEffect(() => {
       import('./ClassReserv.css');
+
+    Axios.get(`${API_URL}/userClassPassInfo`)
+    .then((res) => {
+      const userData = res.data.find((user) => user.usrId === myId);
+      if(userData && Array.isArray(userData.info)) {
+        setUserPassInfo(userData.info);
+
+      } else {
+        console.log("데이터 조회 실패");
+      }
+    })
   }, []);
 
   const ableReservBs = ["09:00","09:30","10:00","10:30","11:00","11:30","12:00"];
