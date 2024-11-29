@@ -202,15 +202,13 @@ function Home() {
       <RenderNoticeSlide />
       <div className="main-inner-box">
         <div className="quick-icon-list">
-          <Link to="/" className="btn-quick btn0">습관 만들기</Link>
+          <Link to="/" className="btn-quick btn0">목표 설정</Link>
           <Link to="/anfit-info" className="btn-quick btn1">안핏 안내</Link>
-          <Link to="/class-pass" className="btn-quick btn2">수강권 정보</Link>
+          <Link to="/" className="btn-quick btn2"></Link>
           <Link to="/" className="btn-quick btn3">예약하기</Link>
         </div>
 
-        <div className="box-title">오늘의 목표</div>
         <RenderTodoList />
-
         <RenderPassSlide />
 
         <div className="box-title">

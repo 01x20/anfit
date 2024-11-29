@@ -5,6 +5,8 @@ const RenderTodoList = () => {
         import('./TodoList.css');
       }, []);
 
+      <>
+    <div className="box-title">오늘의 목표</div>
     <div className="todo-box">
         <div className="check-box">
           <label htmlFor="Chk01" className="label">
@@ -21,5 +23,6 @@ const RenderTodoList = () => {
           </label>
         </div>
       </div>
+      </>
 }
 export default RenderTodoList;
